@@ -291,6 +291,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Settings
@@ -304,76 +306,23 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
+  <a href="#description-field-on-fred-element" title="Description field on Fred Element" class="md-nav__link">
+    Description field on Fred Element
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote" title="remote" class="md-nav__link">
-    remote
+  <a href="#json-in-optionschunk" title="JSON in optionsChunk" class="md-nav__link">
+    JSON in optionsChunk
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mediasource" title="mediaSource" class="md-nav__link">
-    mediaSource
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#imagemediasource" title="imageMediaSource" class="md-nav__link">
-    imageMediaSource
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#settings" title="settings" class="md-nav__link">
-    settings
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#available-group-properties" title="Available group properties" class="md-nav__link">
-    Available group properties
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#available-setting-properties" title="Available setting properties" class="md-nav__link">
-    Available setting properties
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#available-types" title="Available types" class="md-nav__link">
-    Available types
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example_1" title="Example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -431,76 +380,23 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
+  <a href="#description-field-on-fred-element" title="Description field on Fred Element" class="md-nav__link">
+    Description field on Fred Element
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote" title="remote" class="md-nav__link">
-    remote
+  <a href="#json-in-optionschunk" title="JSON in optionsChunk" class="md-nav__link">
+    JSON in optionsChunk
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mediasource" title="mediaSource" class="md-nav__link">
-    mediaSource
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#imagemediasource" title="imageMediaSource" class="md-nav__link">
-    imageMediaSource
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#settings" title="settings" class="md-nav__link">
-    settings
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#available-group-properties" title="Available group properties" class="md-nav__link">
-    Available group properties
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#available-setting-properties" title="Available setting properties" class="md-nav__link">
-    Available setting properties
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#available-types" title="Available types" class="md-nav__link">
-    Available types
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example_1" title="Example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -523,11 +419,15 @@
                   <a href="https://github.com/modxcms/fred/edit/master/docs/elements/settings.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Settings</h1>
-                
-                <p>JSON object of specific options for the Fred Element.</p>
+                <p>Settings are currently defined in the Fred Element chunk's description field as a reference to another chunk containing a JSON object of specific options for the Fred Element.</p>
 <h2 id="example">Example</h2>
-<pre><code class="json">{
+<h3 id="description-field-on-fred-element">Description field on Fred Element</h3>
+<pre><code>image:https://placehold.it/300x150&amp;text=Fred%20Element
+options:optionsChunk
+</code></pre>
+
+<h3 id="json-in-optionschunk">JSON in optionsChunk</h3>
+<pre><code>{
     &quot;remote&quot;: true,
     &quot;mediaSource&quot;: &quot;1,2&quot;,
     &quot;imageMediaSource&quot;: 3,
@@ -542,6 +442,7 @@
 }
 </code></pre>
 
+<h1 id="available-settings">Available Settings</h1>
 <h2 id="remote">remote</h2>
 <p>If set to <code>true</code> XHR request will be fired to render the Element through both Twig and MODX parsers. This means you can have dynamic content that references other pages within a Fred page using MODX Snippets.</p>
 <h2 id="mediasource">mediaSource</h2>
