@@ -562,6 +562,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../media_sources/" title="Media Sources" class="md-nav__link">
+      Media Sources
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../../system_settings/" title="System Settings" class="md-nav__link">
       System Settings
     </a>
@@ -828,17 +840,17 @@
                   <h1>Attributes</h1>
                 
                 <p>Currently available attributes for Fred elements.</p>
-<h2 id="contenteditable">contenteditable</h2>
+<h3 id="contenteditable">contenteditable</h3>
 <p>If set to <code>true</code> the content of the HTML element will be editable for the user, including all children.
 This attribute has to be used with <code>data-fred-name</code> to save the value.</p>
-<h3 id="example">Example</h3>
+<h4 id="example">Example</h4>
 <pre><code class="html">&lt;p contenteditable=&quot;true&quot; data-fred-name=&quot;description&quot;&gt;Default value&lt;/p&gt;
 </code></pre>
 
-<h2 id="data-fred-name">data-fred-name</h2>
+<h3 id="data-fred-name">data-fred-name</h3>
 <p>Name for the editable HTML element. Only elements with this attribute will be saved.
 Value of this attribute has to be unique across a single Element, but you can have multiple instances of an Element on pages.</p>
-<h3 id="example_1">Example</h3>
+<h4 id="example_1">Example</h4>
 <pre><code class="html">&lt;!-- Simple editable paragraph --&gt;
 &lt;p contenteditable=&quot;true&quot; data-fred-name=&quot;description&quot;&gt;Default value&lt;/p&gt;
 
@@ -846,61 +858,61 @@ Value of this attribute has to be unique across a single Element, but you can ha
 &lt;img src=&quot;http://via.placeholder.com/450x150&quot; data-fred-name=&quot;header-image&quot;&gt;
 </code></pre>
 
-<h2 id="data-fred-attrs">data-fred-attrs</h2>
+<h3 id="data-fred-attrs">data-fred-attrs</h3>
 <p>Defines other HTML attributes (comma separated) to save with the content of the HTML element. </p>
-<h3 id="example_2">Example</h3>
+<h4 id="example_2">Example</h4>
 <pre><code class="html">&lt;img src=&quot;http://via.placeholder.com/450x150&quot; alt=&quot;Default Alt&quot; data-fred-name=&quot;header-image&quot; data-fred-attrs=&quot;alt&quot;&gt;
 </code></pre>
 
-<h2 id="data-fred-render">data-fred-render</h2>
+<h3 id="data-fred-render">data-fred-render</h3>
 <p>If set to <code>false</code> HTML element won't appear when Fred is not loaded. This allows developers to create user-friendly, self-documenting Elements that inform users what they need to do in order to create content.</p>
-<h3 id="example_3">Example</h3>
+<h4 id="example_3">Example</h4>
 <pre><code class="html">&lt;p data-fred-render=&quot;false&quot;&gt;Add a *Link Location* setting for this Element to make the button appear. (This will be visible only when Fred is used to create content.)&lt;/p&gt;
 </code></pre>
 
-<h2 id="data-fred-target">data-fred-target</h2>
+<h3 id="data-fred-target">data-fred-target</h3>
 <p>Defines Resource field to store content. Content of the HTML element will be stored in regular Content field and additionally in the specified target. Valid targets include any standard content fields like Pagetitle, Longtitle or Description, or any Template Variable that stores its value purely as text. </p>
-<h3 id="example_4">Example</h3>
+<h4 id="example_4">Example</h4>
 <pre><code class="html">&lt;h1 data-fred-name=&quot;title&quot; data-fred-target=&quot;pagetitle&quot; contenteditable=&quot;true&quot;&gt;Default Page Title&lt;/h1&gt;
 </code></pre>
 
-<h2 id="data-fred-rte">data-fred-rte</h2>
+<h3 id="data-fred-rte">data-fred-rte</h3>
 <p>If set to <code>true</code> the Rich Text Editor will be loaded for the editable HTML element.</p>
-<h3 id="example_5">Example</h3>
+<h4 id="example_5">Example</h4>
 <pre><code class="html">&lt;div data-fred-name=&quot;rte-content&quot; contenteditable=&quot;true&quot; data-fred-rte=&quot;true&quot;&gt;Default Content&lt;/div&gt;
 </code></pre>
 
-<h2 id="data-fred-dropzone">data-fred-dropzone</h2>
+<h3 id="data-fred-dropzone">data-fred-dropzone</h3>
 <p>Defines a new Drop Zone for Fred Elements. This attribute cannot be empty and has to be unique across a single Element. You can create an unlimited number of Dropzones, though more than a few might get quite cumbersome. This is useful for creating alternate layouts like full width, split pages, sidebar pages, etc.</p>
-<h3 id="example_6">Example</h3>
+<h4 id="example_6">Example</h4>
 <pre><code class="html">&lt;div data-fred-dropzone=&quot;left&quot; class=&quot;left-content&quot;&gt;&lt;/div&gt;
 &lt;div data-fred-dropzone=&quot;right&quot; class=&quot;right-content&quot;&gt;&lt;/div&gt;
 </code></pre>
 
-<h2 id="data-fred-link-type">data-fred-link-type</h2>
+<h3 id="data-fred-link-type">data-fred-link-type</h3>
 <p>Sets a type for a link, used for processing before generating content. Available values: <code>page</code>
 Used together with other <code>data-fred-link-</code> attributes.</p>
-<h3 id="example_7">Example</h3>
+<h4 id="example_7">Example</h4>
 <pre><code class="html">&lt;a href=&quot;fred.html&quot; data-fred-link-type=&quot;page&quot; data-fred-link-page=&quot;2&quot;&gt;Fred&lt;/a&gt;
 </code></pre>
 
-<h2 id="data-fred-link-page">data-fred-link-page</h2>
+<h3 id="data-fred-link-page">data-fred-link-page</h3>
 <p>Defines ID of MODX Resource. Value of this attribute will be used as a link's href (in MODX format <code>[[~ID]]</code>) when content is generated.</p>
-<h3 id="example_8">Example</h3>
+<h4 id="example_8">Example</h4>
 <pre><code class="html">&lt;a href=&quot;fred.html&quot; data-fred-link-type=&quot;page&quot; data-fred-link-page=&quot;2&quot;&gt;Fred&lt;/a&gt;
 </code></pre>
 
-<h2 id="data-fred-media-source">data-fred-media-source</h2>
+<h3 id="data-fred-media-source">data-fred-media-source</h3>
 <p>This option override globals from Element Settings.</p>
 <p>Defines Media Source to be used for the element. ID of the media source is expected and can accommodate multiple IDs separated by comma <code>,</code>.</p>
-<h3 id="example_9">Example</h3>
+<h4 id="example_9">Example</h4>
 <pre><code class="html">&lt;img src=&quot;http://via.placeholder.com/450x150&quot; data-fred-name=&quot;header-image&quot; data-fred-media-source=&quot;1,2&quot;&gt;
 </code></pre>
 
-<h2 id="data-fred-image-media-source">data-fred-image-media-source</h2>
+<h3 id="data-fred-image-media-source">data-fred-image-media-source</h3>
 <p>This option override globals from Element Settings and <code>data-fred-media-source</code> (but only for images).</p>
 <p>Defines Media Source to be used for the element. ID of the media source is expected and can accommodate multiple IDs separated by comma <code>,</code>.</p>
-<h3 id="example_10">Example</h3>
+<h4 id="example_10">Example</h4>
 <pre><code class="html">&lt;img src=&quot;http://via.placeholder.com/450x150&quot; data-fred-name=&quot;header-image&quot; data-fred-image-media-source=&quot;1,2&quot;&gt;
 </code></pre>
                 
@@ -938,13 +950,13 @@ Used together with other <code>data-fred-link-</code> attributes.</p>
           </a>
         
         
-          <a href="../../system_settings/" title="System Settings" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../media_sources/" title="Media Sources" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                System Settings
+                Media Sources
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

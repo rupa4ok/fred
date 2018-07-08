@@ -206,14 +206,54 @@
             "title": "Example"
         },
         {
+            "location": "/media_sources/",
+            "text": "Media Sources can either be assigned globally via a setting in the Media Source itself, or in an Element's settings by referencing the Media Source ID(s). On install two new settings are added to each Media Source. If you create new Media Sources you will either need to manually add these settings or rerun the installer.\n\n\nMedia Source Settings\n\n\nfred\n\n\nA Yes/No setting that defines if the Media Source is globally available to Elements rendered in Fred. \n(defaults to no)\n\n\nfredReadOnly\n\n\nA Yes/No setting that locks a Media Source from being written to. \n(defaults to no)\n\n\nElement Settings\n\n\nmediaSource\n\n\nID of the Media Source to use for Finder. Multiple IDs can be passed separated by comma \n,\n.\n\n\nimageMediaSource\n\n\nID of the Media Source to use for Image fields. Multiple IDs can be passed separated by comma \n,\n. This option overrides \nmediaSource\n.",
+            "title": "Media Sources"
+        },
+        {
+            "location": "/media_sources/#media-source-settings",
+            "text": "",
+            "title": "Media Source Settings"
+        },
+        {
+            "location": "/media_sources/#fred",
+            "text": "A Yes/No setting that defines if the Media Source is globally available to Elements rendered in Fred.  (defaults to no)",
+            "title": "fred"
+        },
+        {
+            "location": "/media_sources/#fredreadonly",
+            "text": "A Yes/No setting that locks a Media Source from being written to.  (defaults to no)",
+            "title": "fredReadOnly"
+        },
+        {
+            "location": "/media_sources/#element-settings",
+            "text": "",
+            "title": "Element Settings"
+        },
+        {
+            "location": "/media_sources/#mediasource",
+            "text": "ID of the Media Source to use for Finder. Multiple IDs can be passed separated by comma  , .",
+            "title": "mediaSource"
+        },
+        {
+            "location": "/media_sources/#imagemediasource",
+            "text": "ID of the Media Source to use for Image fields. Multiple IDs can be passed separated by comma  , . This option overrides  mediaSource .",
+            "title": "imageMediaSource"
+        },
+        {
             "location": "/system_settings/",
-            "text": "Fred system settings control how your site reacts. Since Fred is loaded on the frontend, you can change how these works per-context, user, or group.\n\n\nDefault Element\n\n\nThe default element settings allows you to chose a default Fred element and target area for placing the content on existing documents. The setting is formatted as \nID|target\n where ID is the identification number of the element and the target is the named element within that element to place the content.\n\n\nE.g. Chunk: Content Area (13)\n\n\n<section class=\"container\">\n    <div contenteditable=\"true\" data-fred-name=\"content\" data-fred-rte=\"true\">\n    </div>\n</section>\n\n\n\n\nYou would set the value to be \n13|content\n\n\nElement's Group Sort\n\n\nBy default element categories are sorted by \nname\n, but you can switch it to use the \nrank\n if you want them to be sorted in a specific order.\n\n\nElement's Category ID\n\n\nTo display, Fred needs to be fed an Element Category ID, which can be found in the \"Categories\" section of the Elements tab. The Element Category also needs sub-categories to display properly. Any chunks left un-categorized will not display.\n\n\nIcon Editor\n\n\nFred can use plugins that tap into different element types. The Icon Editor targets \n<i>\n elements that also have a \ndata-fred-name\n attribute.\n\n\nImage Editor\n\n\nFred can use plugins that tap into different element types. The Image Editor targets \n<img>\n elements that also have a \ndata-fred-name\n attribute.\n\n\nPosition of Launcher\n\n\nThe Fred launcher can be positioned in any corner of the site to prevent hiding an element on your design. Options include: \nbottom_left\n, \nbottom\n, \nbottom_right\n, \ntop_left\n, \ntop\n, and \ntop_right\n.\n\n\nRich Text Editor\n\n\nFred can use plugins that tap into different element types. The Image Editor targets any wrapper elements that also have a \ndata-fred-name\n attribute and are set to \ncontenteditable=\"true\" data-fred-rte=\"true\"\n.\n\n\nTemplate IDs\n\n\nThe Template IDs are a comma separated list of templates to launch Fred on. Fred Templates can not have the content area edited in the backend, and existing templates that are switched to Fred Templates will have the content wrapped in the \nDefault Element\n.",
+            "text": "Fred system settings control how your site reacts. Since Fred is loaded on the frontend, you can change how these works per-context, user, or group.\n\n\nDefault Element\n\n\nThe default element settings allows you to chose a default Fred element and target area for placing the content on existing documents. The setting is formatted as \nID|target\n where ID is the identification number of the element and the target is the named element within that element to place the content.\n\n\nExample Chunk: Content Area (13)\n\n\n<section class=\"container\">\n    <div contenteditable=\"true\" data-fred-name=\"content\" data-fred-rte=\"true\">\n    </div>\n</section>\n\n\n\n\nYou would set the value to be \n13|content\n\n\nElement's Group Sort\n\n\nBy default element categories are sorted by \nname\n, but you can switch it to use the \nrank\n if you want them to be sorted in a specific order.\n\n\nElement's Category ID\n\n\nTo display, Fred needs to be fed an Element Category ID, which can be found in the \"Categories\" section of the Elements tab. The Element Category also needs sub-categories to display properly. Any chunks left un-categorized will not display.\n\n\nIcon Editor\n\n\nFred can use plugins that tap into different element types. The Icon Editor targets \n<i>\n elements that also have a \ndata-fred-name\n attribute.\n\n\nImage Editor\n\n\nFred can use plugins that tap into different element types. The Image Editor targets \n<img>\n elements that also have a \ndata-fred-name\n attribute.\n\n\nPosition of Launcher\n\n\nThe Fred launcher can be positioned in any corner of the site to prevent hiding an element on your design. Options include: \nbottom_left\n, \nbottom\n, \nbottom_right\n, \ntop_left\n, \ntop\n, and \ntop_right\n.\n\n\nRich Text Editor\n\n\nFred can use plugins that tap into different element types. The Image Editor targets any wrapper elements that also have a \ndata-fred-name\n attribute and are set to \ncontenteditable=\"true\" data-fred-rte=\"true\"\n.\n\n\nTemplate IDs\n\n\nThe Template IDs are a comma separated list of templates to launch Fred on. Fred Templates can not have the content area edited in the backend, and existing templates that are switched to Fred Templates will have the content wrapped in the \nDefault Element\n.",
             "title": "System Settings"
         },
         {
             "location": "/system_settings/#default-element",
-            "text": "The default element settings allows you to chose a default Fred element and target area for placing the content on existing documents. The setting is formatted as  ID|target  where ID is the identification number of the element and the target is the named element within that element to place the content.  E.g. Chunk: Content Area (13)  <section class=\"container\">\n    <div contenteditable=\"true\" data-fred-name=\"content\" data-fred-rte=\"true\">\n    </div>\n</section>  You would set the value to be  13|content",
+            "text": "The default element settings allows you to chose a default Fred element and target area for placing the content on existing documents. The setting is formatted as  ID|target  where ID is the identification number of the element and the target is the named element within that element to place the content.",
             "title": "Default Element"
+        },
+        {
+            "location": "/system_settings/#example-chunk-content-area-13",
+            "text": "<section class=\"container\">\n    <div contenteditable=\"true\" data-fred-name=\"content\" data-fred-rte=\"true\">\n    </div>\n</section>  You would set the value to be  13|content",
+            "title": "Example Chunk: Content Area (13)"
         },
         {
             "location": "/system_settings/#elements-group-sort",
