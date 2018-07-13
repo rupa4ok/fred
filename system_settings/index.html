@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.2">
     
     
       
@@ -313,6 +313,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../media_sources/" title="Media Sources" class="md-nav__link">
       Media Sources
     </a>
@@ -549,7 +561,7 @@
                 
                 <p>Fred system settings control how your site reacts. Since Fred is loaded on the frontend, you can change how these works per-context, user, or group.</p>
 <h3 id="default-element">Default Element</h3>
-<p>The default element settings allows you to chose a default Fred element and target area for placing the content on existing documents. The setting is formatted as <code>ID|target</code> where ID is the identification number of the element and the target is the named element within that element to place the content.</p>
+<p>The default element settings allows you to chose a default Fred element and target area for placing the content on existing documents. The setting is formatted as <code>ID|target</code> where ID is the identification number of the Chunk and the target is the HTML element within that Chunk identified with a <code>data-fred-name</code> attribute.</p>
 <h4 id="example-chunk-content-area-13">Example Chunk: Content Area (13)</h4>
 <pre><code class="html">&lt;section class=&quot;container&quot;&gt;
     &lt;div contenteditable=&quot;true&quot; data-fred-name=&quot;content&quot; data-fred-rte=&quot;true&quot;&gt;
@@ -561,7 +573,7 @@
 <h3 id="elements-group-sort">Element's Group Sort</h3>
 <p>By default element categories are sorted by <code>name</code>, but you can switch it to use the <code>rank</code> if you want them to be sorted in a specific order.</p>
 <h3 id="elements-category-id">Element's Category ID</h3>
-<p>To display, Fred needs to be fed an Element Category ID, which can be found in the "Categories" section of the Elements tab. The Element Category also needs sub-categories to display properly. Any chunks left un-categorized will not display.</p>
+<p>To display, Fred needs to be fed an Element Category ID, which can be found in the "Categories" section of the Elements tab. The Element Category also needs sub-categories to display properly. Any Chunks left un-categorized will not display.</p>
 <h3 id="icon-editor">Icon Editor</h3>
 <p>Fred can use plugins that tap into different element types. The Icon Editor targets <code>&lt;i&gt;</code> elements that also have a <code>data-fred-name</code> attribute.</p>
 <h3 id="image-editor">Image Editor</h3>
