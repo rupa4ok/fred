@@ -748,7 +748,10 @@ options:optionsChunk
 </li>
 <li>page<ul>
 <li>MODX Page select</li>
-<li>Value is returned as an object in format: <code>{"id": 1, "url": "fred.html"}</code></li>
+<li>Value is returned as an object in format: <code>{"id": 1, "url": "fred.html"}</code><ul>
+<li>Refrencing ID or URL alone is done through the dot syntax: <code>{{ page-name-example.id}}</code></li>
+</ul>
+</li>
 <li>Type specific properties:<ul>
 <li>clearButton - If set to <code>true</code> button to clear select will appear</li>
 <li>parents - If set, only resource from these parents (including parents itself) will show; Value can be string with a comma as a separator or an array</li>
