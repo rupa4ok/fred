@@ -17,12 +17,12 @@
         }, 
         {
             "location": "/gettingstarted/", 
-            "text": "Getting Started\n\n\nTo use Fred, you'll need to set up a few things before you can start creating content.\n\n\n\n\nInstall \nFred from MODX.com\n\n\nSet up a template with the content dropzone\n\n\nCreate a category structure to hold your elements\n\n\nInstruct Fred to activate on your template and to use your categories\n\n\nCreate your first elements\n\n\n\n\nStep 1: Install Fred\n\n\nFred is available as a transport package. In your MODX installation, go to Extras \n Installer and click on Download Extras. Find Fred through the search. \n\n\nYou may also see other extras listed that are built to be used with Fred. When you decide to use these, you may need to set those up or integrate them with your elements separately.\n\n\nOnce downloaded, install Fred from the packages grid. \n\n\nStep 2: Set up a template\n\n\nFred needs to know where your modular content has to go. It needs a container for that, which it calls a dropzone. \n\n\nCreate a template (or update an existing one), and add the following to it where you would normally have the \n[[*content]]\n tag:\n\n\ndiv data-fred-dropzone=\"content\" style=\"min-height: 200px;\"\n\n    [[*content]]\n\n/div\n\n\n\n\nNote the \ndata-fred-dropzone=\"content\"\n attribute - that is required and needs to have a value of content. It tells Fred that this is your main content field and needs to be managed as such.\n\n\nThe \nmin-height\n style is optional, but helps with making it easier to drop the first element into your content later.\n\n\nStep 3: Create the category structure for your elements\n\n\nBefore you can start adding elements, you'll need some elements!\n\n\nFred structures elements into categories, two levels deep. You first need a container category. That category will then have any number of subcategories that will contain your actual elements.\n\n\nFor example, your category structure could look like this:\n\n\n\n\nFred Elements\n\n\nText\n\n\nImages\n\n\nWidgets\n\n\n\n\n\n\n\n\nWithin the \"Text\", \"Images\" and \"Widgets\" categories you will create Chunks that act as the unique element types available to your content builder. \n\n\nFor now, create a \"Fred Elements\" category and at least one subcategory, for example \"Text\", and let's move on to tell Fred where to look.\n\n\nStep 4: Instruct Fred to use your template and categories\n\n\nNow that we've created the basic template and our category structure, let's tell Fred about it!\n\n\nGo to System \n System Settings in MODX and select Fred in the namespace dropdown (the one that defaults to \"core\"). There are a number of options available to you here, but we're most concerned with the following 2:\n\n\n\n\nSet \nfred.template_ids\n to the ID of the template you added the dropzone to in step 2\n\n\nSet \nfred.elements_category_id\n to the ID of the root category you created to hold the subcategories and elements. This is the one with the name \"Fred Elements\" in our example. To find the category ID, look under Elements \n Categories, the ID is the number between brackets there.\n\n\n\n\nNow you should be able of visiting a resource that uses your template from step 2 and see either the \"Open in Fred\" button (in the manager), or the Fred launcher in the bottom left of the page (in the frontend). That tells us we're on the right path, now we need to create some elements.\n\n\nStep 5: Create your first elements\n\n\nLet's start by creating a heading element, often the first thing on a page. \n\n\nCreate a chunk in the Fred Elements \n Text category with name \nheading\n. Give it the following content:\n\n\nh1 contenteditable=\"true\" data-fred-name=\"heading\"\nHello, world.\n/h1\n\n\n\n\nFor the description, add: \n\n\nimage:https://placehold.it/300x150\ntext=Heading\n\n\n\nYou can read more about the description field in the Elements \n Setting documentation, for now just trust that it's a good idea to add that option.\n\n\nSave your chunk and go back to the frontend of your resource, refreshing the page.\n\n\nClick on the orange elements icon or the MODX icon in the launcher at the bottom left of the page. In the Elements tab of the sidebar, you should see the subcategories you created earlier in step 3. Hover over the Text category to see your Heading element, and drag it into the empty content. \n\n\nCongratulations, you just added your first element to a page!\n\n\nNow that it's in place, you can click on it to edit its text. By hovering over an element you'll see an additional toolbar that lets you duplicate, delete, or move the element on your page. \n\n\nLet's create another element for simple text. Create a chunk under Fred Elements \n Text with the name \nparagraph\n, \nimage:https://placehold.it/300x150\ntext=Paragraph\n as description, and \np contenteditable=\"true\" data-fred-name=\"paragraph\"\nYour content goes here.\n/p\n as content. Save, and refresh the frontend. Try inserting your element and moving it across the page. \n\n\nLearn more\n\n\nNow that you have the basics of Fred working, you can learn more about the different types of elements you can create. These are all created as chunks, with special data attributes to indicate how they should be treated and saved.", 
+            "text": "Getting Started\n\n\nTo use Fred, you'll need to set up a few things before you can start creating content.\n\n\n\n\nInstall \nFred from MODX.com\n\n\nSet up a template with the content dropzone\n\n\nInstruct Fred to use your template\n\n\nCreate the category structure for your elements\n\n\nCreate your first elements\n\n\n\n\nStep 1: Install Fred\n\n\nFred is available as a transport package. In your MODX installation, go to Extras \n Installer and click on Download Extras. Find Fred through the search. \n\n\nYou may also see other extras listed that are built to be used with Fred. When you decide to use these, you may need to set those up or integrate them with your elements separately.\n\n\nOnce downloaded, install Fred from the packages grid. \n\n\nStep 2: Set up a template\n\n\nFred needs to know where your modular content has to go. It needs a container for that, which it calls a dropzone. \n\n\nCreate a template (or update an existing one), and add the following to it where you would normally have the \n[[*content]]\n tag:\n\n\ndiv data-fred-dropzone=\"content\" style=\"min-height: 200px;\"\n\n    [[*content]]\n\n/div\n\n\n\n\nNote the \ndata-fred-dropzone=\"content\"\n attribute - that is required and needs to have a value of content. It tells Fred that this is your main content field and needs to be managed as such.\n\n\nThe \nmin-height\n style is optional, but helps with making it easier to drop the first element into your content later.\n\n\nStep 3: Instruct Fred to use your template\n\n\nNow that we've created the basic template, let's tell Fred about it!\n\n\n\n\nGo to Extras \n Fred and switch to \nThemed Templates\n tab.\n\n\nClick the \nAssign Theme to a Template\n button\n\n\nSelect all Templates you'll want to use with fred\n\n\nSelect \nDefault\n Theme\n\n\nClick \nSave\n\n\n\n\nNow you should be able of visiting a resource that uses your template from step 2 and see either the \"Open in Fred\" button (in the manager), or the Fred launcher in the bottom left of the page (in the frontend). That tells us we're on the right path, now we need to create some categories and elements.\n\n\nStep 4: Create the category structure for your elements\n\n\nBefore you can start adding elements, you'll need some categories!\n\n\nFred structures elements into categories. Open Element's CMP (Extras \n Fred \n Elements), switch to \nCategories\n tab and create categories that will later contain your actual elements.\n\n\nFor example, your categories could look like this:\n\n\n\n\nText\n\n\nImages\n\n\nWidgets\n\n\n\n\nLater you'll create Elements and assign them to the \"Text\", \"Images\" or \"Widgets\" categories. \n\n\nFor now, create at least one category, for example \"Text\", and let's move on to create some Elements.\n\n\nStep 5: Create your first elements\n\n\nLet's start by creating a heading element, often the first thing on a page. \n\n\nSwitch to the \nElements\n tab in Element's CMP (Extras \n Fred \n Elements) and hit \nCreate Element\n button. Fill the name (\nheading\n), category (\nText\n), image (\nhttps://placehold.it/300x150\ntext=Heading\n) and use following Element's Markup:\n\n\nh1 contenteditable=\"true\" data-fred-name=\"heading\"\nHello, world.\n/h1\n\n\n\n\nSave your Element and go back to the frontend of your resource, refreshing the page.\n\n\nClick on the orange elements icon or the MODX icon in the launcher at the bottom left of the page. In the Elements tab of the sidebar, you should see the categories you created earlier in step 4. Hover over the Text category to see your Heading element, and drag it into the empty content. \n\n\nCongratulations, you just added your first element to a page!\n\n\nNow that it's in place, you can click on it to edit its text. By hovering over an element you'll see an additional toolbar that lets you duplicate, delete, or move the element on your page. \n\n\nLet's create another element for simple text. Create an Element under same category with the name \nparagraph\n, \nhttps://placehold.it/300x150\ntext=Paragraph\n as image, and \np contenteditable=\"true\" data-fred-name=\"paragraph\"\nYour content goes here.\n/p\n as markup. Save, and refresh the frontend. Try inserting your element and moving it across the page. \n\n\nLearn more\n\n\nNow that you have the basics of Fred working, you can learn more about the different types of elements you can create.", 
             "title": "Getting Started"
         }, 
         {
             "location": "/gettingstarted/#getting-started", 
-            "text": "To use Fred, you'll need to set up a few things before you can start creating content.   Install  Fred from MODX.com  Set up a template with the content dropzone  Create a category structure to hold your elements  Instruct Fred to activate on your template and to use your categories  Create your first elements", 
+            "text": "To use Fred, you'll need to set up a few things before you can start creating content.   Install  Fred from MODX.com  Set up a template with the content dropzone  Instruct Fred to use your template  Create the category structure for your elements  Create your first elements", 
             "title": "Getting Started"
         }, 
         {
@@ -36,23 +36,23 @@
             "title": "Step 2: Set up a template"
         }, 
         {
-            "location": "/gettingstarted/#step-3-create-the-category-structure-for-your-elements", 
-            "text": "Before you can start adding elements, you'll need some elements!  Fred structures elements into categories, two levels deep. You first need a container category. That category will then have any number of subcategories that will contain your actual elements.  For example, your category structure could look like this:   Fred Elements  Text  Images  Widgets     Within the \"Text\", \"Images\" and \"Widgets\" categories you will create Chunks that act as the unique element types available to your content builder.   For now, create a \"Fred Elements\" category and at least one subcategory, for example \"Text\", and let's move on to tell Fred where to look.", 
-            "title": "Step 3: Create the category structure for your elements"
+            "location": "/gettingstarted/#step-3-instruct-fred-to-use-your-template", 
+            "text": "Now that we've created the basic template, let's tell Fred about it!   Go to Extras   Fred and switch to  Themed Templates  tab.  Click the  Assign Theme to a Template  button  Select all Templates you'll want to use with fred  Select  Default  Theme  Click  Save   Now you should be able of visiting a resource that uses your template from step 2 and see either the \"Open in Fred\" button (in the manager), or the Fred launcher in the bottom left of the page (in the frontend). That tells us we're on the right path, now we need to create some categories and elements.", 
+            "title": "Step 3: Instruct Fred to use your template"
         }, 
         {
-            "location": "/gettingstarted/#step-4-instruct-fred-to-use-your-template-and-categories", 
-            "text": "Now that we've created the basic template and our category structure, let's tell Fred about it!  Go to System   System Settings in MODX and select Fred in the namespace dropdown (the one that defaults to \"core\"). There are a number of options available to you here, but we're most concerned with the following 2:   Set  fred.template_ids  to the ID of the template you added the dropzone to in step 2  Set  fred.elements_category_id  to the ID of the root category you created to hold the subcategories and elements. This is the one with the name \"Fred Elements\" in our example. To find the category ID, look under Elements   Categories, the ID is the number between brackets there.   Now you should be able of visiting a resource that uses your template from step 2 and see either the \"Open in Fred\" button (in the manager), or the Fred launcher in the bottom left of the page (in the frontend). That tells us we're on the right path, now we need to create some elements.", 
-            "title": "Step 4: Instruct Fred to use your template and categories"
+            "location": "/gettingstarted/#step-4-create-the-category-structure-for-your-elements", 
+            "text": "Before you can start adding elements, you'll need some categories!  Fred structures elements into categories. Open Element's CMP (Extras   Fred   Elements), switch to  Categories  tab and create categories that will later contain your actual elements.  For example, your categories could look like this:   Text  Images  Widgets   Later you'll create Elements and assign them to the \"Text\", \"Images\" or \"Widgets\" categories.   For now, create at least one category, for example \"Text\", and let's move on to create some Elements.", 
+            "title": "Step 4: Create the category structure for your elements"
         }, 
         {
             "location": "/gettingstarted/#step-5-create-your-first-elements", 
-            "text": "Let's start by creating a heading element, often the first thing on a page.   Create a chunk in the Fred Elements   Text category with name  heading . Give it the following content:  h1 contenteditable=\"true\" data-fred-name=\"heading\" Hello, world. /h1   For the description, add:   image:https://placehold.it/300x150 text=Heading  You can read more about the description field in the Elements   Setting documentation, for now just trust that it's a good idea to add that option.  Save your chunk and go back to the frontend of your resource, refreshing the page.  Click on the orange elements icon or the MODX icon in the launcher at the bottom left of the page. In the Elements tab of the sidebar, you should see the subcategories you created earlier in step 3. Hover over the Text category to see your Heading element, and drag it into the empty content.   Congratulations, you just added your first element to a page!  Now that it's in place, you can click on it to edit its text. By hovering over an element you'll see an additional toolbar that lets you duplicate, delete, or move the element on your page.   Let's create another element for simple text. Create a chunk under Fred Elements   Text with the name  paragraph ,  image:https://placehold.it/300x150 text=Paragraph  as description, and  p contenteditable=\"true\" data-fred-name=\"paragraph\" Your content goes here. /p  as content. Save, and refresh the frontend. Try inserting your element and moving it across the page.", 
+            "text": "Let's start by creating a heading element, often the first thing on a page.   Switch to the  Elements  tab in Element's CMP (Extras   Fred   Elements) and hit  Create Element  button. Fill the name ( heading ), category ( Text ), image ( https://placehold.it/300x150 text=Heading ) and use following Element's Markup:  h1 contenteditable=\"true\" data-fred-name=\"heading\" Hello, world. /h1   Save your Element and go back to the frontend of your resource, refreshing the page.  Click on the orange elements icon or the MODX icon in the launcher at the bottom left of the page. In the Elements tab of the sidebar, you should see the categories you created earlier in step 4. Hover over the Text category to see your Heading element, and drag it into the empty content.   Congratulations, you just added your first element to a page!  Now that it's in place, you can click on it to edit its text. By hovering over an element you'll see an additional toolbar that lets you duplicate, delete, or move the element on your page.   Let's create another element for simple text. Create an Element under same category with the name  paragraph ,  https://placehold.it/300x150 text=Paragraph  as image, and  p contenteditable=\"true\" data-fred-name=\"paragraph\" Your content goes here. /p  as markup. Save, and refresh the frontend. Try inserting your element and moving it across the page.", 
             "title": "Step 5: Create your first elements"
         }, 
         {
             "location": "/gettingstarted/#learn-more", 
-            "text": "Now that you have the basics of Fred working, you can learn more about the different types of elements you can create. These are all created as chunks, with special data attributes to indicate how they should be treated and saved.", 
+            "text": "Now that you have the basics of Fred working, you can learn more about the different types of elements you can create.", 
             "title": "Learn more"
         }, 
         {
@@ -66,73 +66,73 @@
             "title": "Markup Example"
         }, 
         {
-            "location": "/elements/settings/", 
-            "text": "Settings are currently defined in the Fred Element chunk's description field as a reference to another chunk containing a JSON object of specific options for the Fred Element.\n\n\nExample\n\n\nDescription field on Fred Element\n\n\nimage:https://placehold.it/300x150\ntext=Fred%20Element\noptions:optionsChunk\n\n\n\n\nJSON in optionsChunk\n\n\n{\n    \nremote\n: true,\n    \nmediaSource\n: \n1,2\n,\n    \nimageMediaSource\n: 3,\n    \nsettings\n: [\n        {\n            \nname\n: \npanel_class\n,\n            \nlabel\n: \nPanel Class\n,\n            \ntype\n: \ntext\n,\n            \nvalue\n: \n\n        }\n    ]\n}\n\n\n\n\nAvailable Settings\n\n\nremote\n\n\nIf set to \ntrue\n XHR request will be fired to render the Element through both Twig and MODX parsers. This means you can have dynamic content that references other pages within a Fred page using MODX Snippets.\n\n\nmediaSource\n\n\nID of the Media Source to use for Finder. Multiple IDs can be passed separated by comma \n,\n.\n\n\nimageMediaSource\n\n\nID of the Media Source to use for Image fields. Multiple IDs can be passed separated by comma \n,\n. This option overrides \nmediaSource\n.\n\n\nsettings\n\n\nAn array of setting objects and group objects for the Fred Element.\n\n\nAvailable group properties\n\n\n\n\ngroup - Name of a group of related sub-settings that open when clicked in a secondary panel. The value of the group property will be used as the label for the group\n\n\nsettings - An array of setting objects\n\n\n\n\nAvailable setting properties\n\n\n\n\nname - Name of the setting, can be used as a Twig variable\n\n\nlabel - Setting's Label, displayed in the Element Settings panel\n\n\ntype - Type of the setting\n\n\nvalue - Default value\n\n\n\n\nAvailable types\n\n\n\n\ntext \n\n\ninput type=\"text\"\n\n\nany text value\n\n\n\n\n\n\nselect\n\n\nSingle select value\n\n\nType specific properties:\n\n\noptions - An object of \nvalue:label\n properties\n\n\n\n\n\n\n\n\n\n\n\n\ntoggle \n\n\n\n\ntrue/false checkbox\n\n\nreturns logical \ntrue\n or \nfalse\n\n\n\n\n\n\n\n\ncolorswatch\n\n\n\n\nVisual color picker, from predefined values\n\n\nType specific properties:\n\n\noptions \n\n\nAn array of colors; Example: \n[\"lightcoral\", \"red\", \"black\"]\n\n\nColor can be either a \nstring\n or an \nobject\n with following properties:\n\n\nvalue - the value passed to Twig for the color, which can be anything\n\n\ncolor - the displayed color for the swatch\n\n\nlabel - an arbitrary label for the swatch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncolorpicker\n\n\n\n\nColor picker\n\n\nType specific properties:\n\n\nshowAlpha - boolean to show alpha slider; Default: \ntrue\n\n\noptions - An array of colors; Example: \n[\"lightcoral\", \"red\", \"black\"]\n\n\n\n\n\n\n\n\n\n\nslider\n\n\nSlider input for numbers\n\n\nType specific properties:\n\n\nmin - \nREQURED\n; Minimum value of the slider\n\n\nmax - \nREQURED\n; Maximum value of the slider\n\n\ntooltipDecimals: Number of decimals to show in slider's tooltip; Default: 0\n\n\nstep: Number to increment slider's value; Default: 1\n\n\n\n\n\n\n\n\n\n\npage\n\n\nMODX Page select\n\n\nValue is returned as an object in format: \n{\"id\": 1, \"url\": \"fred.html\"}\n\n\nRefrencing ID or URL alone is done through the dot syntax: \n{{ page-name-example.id}}\n\n\n\n\n\n\nType specific properties:\n\n\nclearButton - If set to \ntrue\n button to clear select will appear\n\n\nparents - If set, only resource from these parents (including parents itself) will show; Value can be string with a comma as a separator or an array\n\n\nresources - If set, only resource with specified IDs will show; Value can be string with a comma as a separator or an array\n\n\ndepth - Depth to look for children for specified \nparents\n; Default: 1\n\n\n\n\n\n\n\n\n\n\nimage\n\n\nImage select\n\n\nType specific properties:\n\n\nshowPreview - If set to \nfalse\n preview won't appear under the text input\n\n\nmediaSource - ID of the Media Source to use; Overrides \nimageMediaSource\n global setting.  \n\n\n\n\n\n\n\n\n\n\ntagger\n\n\nSelect for Tagger tags\n\n\nType specific properties:\n\n\nautoTag - true/false to show/hide the auto tag\n\n\nhideInput - true/false to show/hide the input\n\n\ngroup - ID of the Tagger group to use\n\n\nlimit - Limit of tags that can be selected\n\n\n\n\n\n\n\n\n\n\n\n\nExample\n\n\n{\n    \nsettings\n: [\n        {\n            \nname\n: \npanel_class\n,\n            \nlabel\n: \nPanel Class\n,\n            \ntype\n: \ntext\n,\n            \nvalue\n: \n\n        },\n        {\n            \ngroup\n: \nCTA\n,\n            \nsettings\n: [\n                {\n                    \nname\n: \ncta_class\n,\n                    \nlabel\n: \nCTA Class\n,\n                    \ntype\n: \nselect\n,\n                    \noptions\n: {\n                        \ndanger\n: \nRed CTA\n,\n                        \ninfo\n: \nBlue CTA\n,\n                        \ndefault\n: \nDefault CTA\n\n                    },\n                    \nvalue\n: \ndefault\n\n                },\n                {\n                    \nname\n: \nshow_cta\n,\n                    \nlabel\n: \nShow CTA\n,\n                    \ntype\n: \ntoggle\n,\n                    \nvalue\n: false\n                },\n                {\n                    \nname\n: \ncolor\n,\n                    \nlabel\n: \nText Color\n,\n                    \ntype\n: \ncolorswatch\n,\n                    \nvalue\n: \nblack\n,\n                    \noptions\n: [{\nvalue\n:\nprimary\n, \ncolor\n:\nblue\n,\nlabel\n:\nPrimary\n}, \nlightcoral\n, \nblack\n, \nrgba(0,255,0,.5)\n]\n                },\n                {\n                    \nname\n: \nbg_color\n,\n                    \nlabel\n: \nBackground COlor\n,\n                    \ntype\n: \ncolorpicker\n,\n                    \nvalue\n: \nwhite\n,\n                    \nshowAlpha\n: true,\n                    \noptions\n: [\nlightcoral\n, \nblack\n, \nwhite\n]\n                },\n                {\n                    \nname\n: \npage\n,\n                    \nlabel\n: \nPage\n,\n                    \ntype\n: \npage\n,\n                    \nvalue\n: {\nid\n:1, \nurl\n: \n[[~1]]\n}\n                }\n            ]\n        }\n    ]\n}", 
-            "title": "Settings"
+            "location": "/elements/options/", 
+            "text": "Options are defined through an attached Option Set, or option override when creating/updating Element.\n\n\nExample Option Set\n\n\n{\n    \nremote\n: true,\n    \nmediaSource\n: \n1,2\n,\n    \nimageMediaSource\n: 3,\n    \nsettings\n: [\n        {\n            \nname\n: \npanel_class\n,\n            \nlabel\n: \nPanel Class\n,\n            \ntype\n: \ntext\n,\n            \nvalue\n: \n\n        }\n    ]\n}\n\n\n\n\nAvailable Options\n\n\nremote\n\n\nIf set to \ntrue\n XHR request will be fired to render the Element through both Twig and MODX parsers. This means you can have dynamic content that references other pages within a Fred page using MODX Snippets.\n\n\nmediaSource\n\n\nID of the Media Source to use for Finder. Multiple IDs can be passed separated by comma \n,\n.\n\n\nimageMediaSource\n\n\nID of the Media Source to use for Image fields. Multiple IDs can be passed separated by comma \n,\n. This option overrides \nmediaSource\n.\n\n\nsettings\n\n\nAn array of setting objects and group objects for the Fred Element. Settings can also contain a special import object, to import another option set.\n\n\nAvailable group properties\n\n\n\n\ngroup - Name of a group of related sub-settings that open when clicked in a secondary panel. The value of the group property will be used as the label for the group\n\n\nsettings - An array of setting objects\n\n\n\n\nAvailable setting properties\n\n\n\n\nname - Name of the setting, can be used as a Twig variable\n\n\nlabel - Setting's Label, displayed in the Element Settings panel\n\n\ntype - Type of the setting\n\n\nvalue - Default value\n\n\n\n\nImport\n\n\nImporting another option set is done with a special object with \nfred-import\n key.\n\n\nExample\n\n\n{\n    \nsettings\n: [\n      {\n        \nfred-import\n: \nname-of-option-set-to-import\n\n      }\n    ]\n}\n\n\n\n\nAvailable types\n\n\n\n\ntext \n\n\ninput type=\"text\"\n\n\nany text value\n\n\n\n\n\n\nselect\n\n\nSingle select value\n\n\nType specific properties:\n\n\noptions - An object of \nvalue:label\n properties\n\n\n\n\n\n\n\n\n\n\n\n\ntoggle \n\n\n\n\ntrue/false checkbox\n\n\nreturns logical \ntrue\n or \nfalse\n\n\n\n\n\n\n\n\ncolorswatch\n\n\n\n\nVisual color picker, from predefined values\n\n\nType specific properties:\n\n\noptions \n\n\nAn array of colors; Example: \n[\"lightcoral\", \"red\", \"black\"]\n\n\nColor can be either a \nstring\n or an \nobject\n with following properties:\n\n\nvalue - the value passed to Twig for the color, which can be anything\n\n\ncolor - the displayed color for the swatch\n\n\nlabel - an arbitrary label for the swatch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncolorpicker\n\n\n\n\nColor picker\n\n\nType specific properties:\n\n\nshowAlpha - boolean to show alpha slider; Default: \ntrue\n\n\noptions - An array of colors; Example: \n[\"lightcoral\", \"red\", \"black\"]\n\n\n\n\n\n\n\n\n\n\nslider\n\n\nSlider input for numbers\n\n\nType specific properties:\n\n\nmin - \nREQURED\n; Minimum value of the slider\n\n\nmax - \nREQURED\n; Maximum value of the slider\n\n\ntooltipDecimals: Number of decimals to show in slider's tooltip; Default: 0\n\n\nstep: Number to increment slider's value; Default: 1\n\n\n\n\n\n\n\n\n\n\npage\n\n\nMODX Page select\n\n\nValue is returned as an object in format: \n{\"id\": 1, \"url\": \"fred.html\"}\n\n\nRefrencing ID or URL alone is done through the dot syntax: \n{{ page-name-example.id}}\n\n\n\n\n\n\nType specific properties:\n\n\nclearButton - If set to \ntrue\n button to clear select will appear\n\n\nparents - If set, only resource from these parents (including parents itself) will show; Value can be string with a comma as a separator or an array\n\n\nresources - If set, only resource with specified IDs will show; Value can be string with a comma as a separator or an array\n\n\ndepth - Depth to look for children for specified \nparents\n; Default: 1\n\n\n\n\n\n\n\n\n\n\nimage\n\n\nImage select\n\n\nType specific properties:\n\n\nshowPreview - If set to \nfalse\n preview won't appear under the text input\n\n\nmediaSource - ID of the Media Source to use; Overrides \nimageMediaSource\n global setting.  \n\n\n\n\n\n\n\n\n\n\ntagger\n\n\nSelect for Tagger tags\n\n\nType specific properties:\n\n\nautoTag - true/false to show/hide the auto tag\n\n\nhideInput - true/false to show/hide the input\n\n\ngroup - ID of the Tagger group to use\n\n\nlimit - Limit of tags that can be selected\n\n\n\n\n\n\n\n\n\n\n\n\nExample\n\n\n{\n    \nsettings\n: [\n        {\n            \nname\n: \npanel_class\n,\n            \nlabel\n: \nPanel Class\n,\n            \ntype\n: \ntext\n,\n            \nvalue\n: \n\n        },\n        {\n            \ngroup\n: \nCTA\n,\n            \nsettings\n: [\n                {\n                    \nname\n: \ncta_class\n,\n                    \nlabel\n: \nCTA Class\n,\n                    \ntype\n: \nselect\n,\n                    \noptions\n: {\n                        \ndanger\n: \nRed CTA\n,\n                        \ninfo\n: \nBlue CTA\n,\n                        \ndefault\n: \nDefault CTA\n\n                    },\n                    \nvalue\n: \ndefault\n\n                },\n                {\n                    \nname\n: \nshow_cta\n,\n                    \nlabel\n: \nShow CTA\n,\n                    \ntype\n: \ntoggle\n,\n                    \nvalue\n: false\n                },\n                {\n                    \nname\n: \ncolor\n,\n                    \nlabel\n: \nText Color\n,\n                    \ntype\n: \ncolorswatch\n,\n                    \nvalue\n: \nblack\n,\n                    \noptions\n: [{\nvalue\n:\nprimary\n, \ncolor\n:\nblue\n,\nlabel\n:\nPrimary\n}, \nlightcoral\n, \nblack\n, \nrgba(0,255,0,.5)\n]\n                },\n                {\n                    \nname\n: \nbg_color\n,\n                    \nlabel\n: \nBackground COlor\n,\n                    \ntype\n: \ncolorpicker\n,\n                    \nvalue\n: \nwhite\n,\n                    \nshowAlpha\n: true,\n                    \noptions\n: [\nlightcoral\n, \nblack\n, \nwhite\n]\n                },\n                {\n                    \nname\n: \npage\n,\n                    \nlabel\n: \nPage\n,\n                    \ntype\n: \npage\n,\n                    \nvalue\n: {\nid\n:1, \nurl\n: \n[[~1]]\n}\n                }\n            ]\n        }\n    ]\n}", 
+            "title": "Options"
         }, 
         {
-            "location": "/elements/settings/#example", 
-            "text": "", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/elements/settings/#description-field-on-fred-element", 
-            "text": "image:https://placehold.it/300x150 text=Fred%20Element\noptions:optionsChunk", 
-            "title": "Description field on Fred Element"
-        }, 
-        {
-            "location": "/elements/settings/#json-in-optionschunk", 
+            "location": "/elements/options/#example-option-set", 
             "text": "{\n     remote : true,\n     mediaSource :  1,2 ,\n     imageMediaSource : 3,\n     settings : [\n        {\n             name :  panel_class ,\n             label :  Panel Class ,\n             type :  text ,\n             value :  \n        }\n    ]\n}", 
-            "title": "JSON in optionsChunk"
+            "title": "Example Option Set"
         }, 
         {
-            "location": "/elements/settings/#available-settings", 
+            "location": "/elements/options/#available-options", 
             "text": "", 
-            "title": "Available Settings"
+            "title": "Available Options"
         }, 
         {
-            "location": "/elements/settings/#remote", 
+            "location": "/elements/options/#remote", 
             "text": "If set to  true  XHR request will be fired to render the Element through both Twig and MODX parsers. This means you can have dynamic content that references other pages within a Fred page using MODX Snippets.", 
             "title": "remote"
         }, 
         {
-            "location": "/elements/settings/#mediasource", 
+            "location": "/elements/options/#mediasource", 
             "text": "ID of the Media Source to use for Finder. Multiple IDs can be passed separated by comma  , .", 
             "title": "mediaSource"
         }, 
         {
-            "location": "/elements/settings/#imagemediasource", 
+            "location": "/elements/options/#imagemediasource", 
             "text": "ID of the Media Source to use for Image fields. Multiple IDs can be passed separated by comma  , . This option overrides  mediaSource .", 
             "title": "imageMediaSource"
         }, 
         {
-            "location": "/elements/settings/#settings", 
-            "text": "An array of setting objects and group objects for the Fred Element.", 
+            "location": "/elements/options/#settings", 
+            "text": "An array of setting objects and group objects for the Fred Element. Settings can also contain a special import object, to import another option set.", 
             "title": "settings"
         }, 
         {
-            "location": "/elements/settings/#available-group-properties", 
+            "location": "/elements/options/#available-group-properties", 
             "text": "group - Name of a group of related sub-settings that open when clicked in a secondary panel. The value of the group property will be used as the label for the group  settings - An array of setting objects", 
             "title": "Available group properties"
         }, 
         {
-            "location": "/elements/settings/#available-setting-properties", 
+            "location": "/elements/options/#available-setting-properties", 
             "text": "name - Name of the setting, can be used as a Twig variable  label - Setting's Label, displayed in the Element Settings panel  type - Type of the setting  value - Default value", 
             "title": "Available setting properties"
         }, 
         {
-            "location": "/elements/settings/#available-types", 
+            "location": "/elements/options/#import", 
+            "text": "Importing another option set is done with a special object with  fred-import  key.", 
+            "title": "Import"
+        }, 
+        {
+            "location": "/elements/options/#example", 
+            "text": "{\n     settings : [\n      {\n         fred-import :  name-of-option-set-to-import \n      }\n    ]\n}", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/elements/options/#available-types", 
             "text": "text   input type=\"text\"  any text value    select  Single select value  Type specific properties:  options - An object of  value:label  properties       toggle    true/false checkbox  returns logical  true  or  false     colorswatch   Visual color picker, from predefined values  Type specific properties:  options   An array of colors; Example:  [\"lightcoral\", \"red\", \"black\"]  Color can be either a  string  or an  object  with following properties:  value - the value passed to Twig for the color, which can be anything  color - the displayed color for the swatch  label - an arbitrary label for the swatch           colorpicker   Color picker  Type specific properties:  showAlpha - boolean to show alpha slider; Default:  true  options - An array of colors; Example:  [\"lightcoral\", \"red\", \"black\"]      slider  Slider input for numbers  Type specific properties:  min -  REQURED ; Minimum value of the slider  max -  REQURED ; Maximum value of the slider  tooltipDecimals: Number of decimals to show in slider's tooltip; Default: 0  step: Number to increment slider's value; Default: 1      page  MODX Page select  Value is returned as an object in format:  {\"id\": 1, \"url\": \"fred.html\"}  Refrencing ID or URL alone is done through the dot syntax:  {{ page-name-example.id}}    Type specific properties:  clearButton - If set to  true  button to clear select will appear  parents - If set, only resource from these parents (including parents itself) will show; Value can be string with a comma as a separator or an array  resources - If set, only resource with specified IDs will show; Value can be string with a comma as a separator or an array  depth - Depth to look for children for specified  parents ; Default: 1      image  Image select  Type specific properties:  showPreview - If set to  false  preview won't appear under the text input  mediaSource - ID of the Media Source to use; Overrides  imageMediaSource  global setting.        tagger  Select for Tagger tags  Type specific properties:  autoTag - true/false to show/hide the auto tag  hideInput - true/false to show/hide the input  group - ID of the Tagger group to use  limit - Limit of tags that can be selected", 
             "title": "Available types"
         }, 
         {
-            "location": "/elements/settings/#example_1", 
+            "location": "/elements/options/#example_1", 
             "text": "{\n     settings : [\n        {\n             name :  panel_class ,\n             label :  Panel Class ,\n             type :  text ,\n             value :  \n        },\n        {\n             group :  CTA ,\n             settings : [\n                {\n                     name :  cta_class ,\n                     label :  CTA Class ,\n                     type :  select ,\n                     options : {\n                         danger :  Red CTA ,\n                         info :  Blue CTA ,\n                         default :  Default CTA \n                    },\n                     value :  default \n                },\n                {\n                     name :  show_cta ,\n                     label :  Show CTA ,\n                     type :  toggle ,\n                     value : false\n                },\n                {\n                     name :  color ,\n                     label :  Text Color ,\n                     type :  colorswatch ,\n                     value :  black ,\n                     options : [{ value : primary ,  color : blue , label : Primary },  lightcoral ,  black ,  rgba(0,255,0,.5) ]\n                },\n                {\n                     name :  bg_color ,\n                     label :  Background COlor ,\n                     type :  colorpicker ,\n                     value :  white ,\n                     showAlpha : true,\n                     options : [ lightcoral ,  black ,  white ]\n                },\n                {\n                     name :  page ,\n                     label :  Page ,\n                     type :  page ,\n                     value : { id :1,  url :  [[~1]] }\n                }\n            ]\n        }\n    ]\n}", 
             "title": "Example"
         }, 
         {
             "location": "/elements/attributes/", 
-            "text": "Currently available attributes for Fred elements.\n\n\ncontenteditable\n\n\nIf set to \ntrue\n the content of the HTML element will be editable for the user, including all children.\nThis attribute has to be used with \ndata-fred-name\n to save the value.\n\n\nExample\n\n\np contenteditable=\ntrue\n data-fred-name=\ndescription\nDefault value\n/p\n\n\n\n\n\ndata-fred-name\n\n\nName for the editable HTML element. Only elements with this attribute will be saved.\nValue of this attribute has to be unique across a single Element, but you can have multiple instances of an Element on pages.\n\n\nExample\n\n\n!-- Simple editable paragraph --\n\n\np contenteditable=\ntrue\n data-fred-name=\ndescription\nDefault value\n/p\n\n\n\n!-- Editable image --\n\n\nimg src=\nhttp://via.placeholder.com/450x150\n data-fred-name=\nheader-image\n\n\n\n\n\ndata-fred-attrs\n\n\nDefines other HTML attributes (comma separated) to save with the content of the HTML element. \n\n\nExample\n\n\nimg src=\nhttp://via.placeholder.com/450x150\n alt=\nDefault Alt\n data-fred-name=\nheader-image\n data-fred-attrs=\nalt\n\n\n\n\n\ndata-fred-render\n\n\nIf set to \nfalse\n HTML element won't appear when Fred is not loaded. This allows developers to create user-friendly, self-documenting Elements that inform users what they need to do in order to create content.\n\n\nExample\n\n\np data-fred-render=\nfalse\nAdd a *Link Location* setting for this Element to make the button appear. (This will be visible only when Fred is used to create content.)\n/p\n\n\n\n\n\ndata-fred-target\n\n\nDefines Resource field to store content. Content of the HTML element will be stored in regular Content field and additionally in the specified target. This attribute can't be used on a dropzone. \n\n\nAvailable targets:\n\n\n\n\npagetitle\n\n\nlongtitle\n\n\ndescription\n\n\nintrotext\n\n\nmenutitle\n\n\nalias\n\n\n\n\nExample\n\n\nh1 data-fred-name=\ntitle\n data-fred-target=\npagetitle\n contenteditable=\ntrue\nDefault Page Title\n/h1\n\n\n\n\n\ndata-fred-rte\n\n\nIf set to \ntrue\n the Rich Text Editor will be loaded for the editable HTML element.\n\n\nExample\n\n\ndiv data-fred-name=\nrte-content\n contenteditable=\ntrue\n data-fred-rte=\ntrue\nDefault Content\n/div\n\n\n\n\n\ndata-fred-dropzone\n\n\nDefines a new Drop Zone for Fred Elements. This attribute cannot be empty and has to be unique across a single Element. You can create an unlimited number of Dropzones, though more than a few might get quite cumbersome. This is useful for creating alternate layouts like full width, split pages, sidebar pages, etc.\n\n\nExample\n\n\ndiv data-fred-dropzone=\nleft\n class=\nleft-content\n/div\n\n\ndiv data-fred-dropzone=\nright\n class=\nright-content\n/div\n\n\n\n\n\ndata-fred-link-type\n\n\nSets a type for a link, used for processing before generating content. Available values: \npage\n\nUsed together with other \ndata-fred-link-\n attributes.\n\n\nExample\n\n\na href=\nfred.html\n data-fred-link-type=\npage\n data-fred-link-page=\n2\nFred\n/a\n\n\n\n\n\ndata-fred-link-page\n\n\nDefines ID of MODX Resource. Value of this attribute will be used as a link's href (in MODX format \n[[~ID]]\n) when content is generated.\n\n\nExample\n\n\na href=\nfred.html\n data-fred-link-type=\npage\n data-fred-link-page=\n2\nFred\n/a\n\n\n\n\n\ndata-fred-media-source\n\n\nThis option override globals from Element Settings.\n\n\nDefines Media Source to be used for the element. ID of the media source is expected and can accommodate multiple IDs separated by comma \n,\n.\n\n\nExample\n\n\nimg src=\nhttp://via.placeholder.com/450x150\n data-fred-name=\nheader-image\n data-fred-media-source=\n1,2\n\n\n\n\n\ndata-fred-image-media-source\n\n\nThis option override globals from Element Settings and \ndata-fred-media-source\n (but only for images).\n\n\nDefines Media Source to be used for the element. ID of the media source is expected and can accommodate multiple IDs separated by comma \n,\n.\n\n\nExample\n\n\nimg src=\nhttp://via.placeholder.com/450x150\n data-fred-name=\nheader-image\n data-fred-image-media-source=\n1,2\n\n\n\n\n\ndata-fred-block-class\n\n\nWhen Fred is loaded, value of this attribute will be appended to class of \ndiv.fred--block\n (which is wrapping the whole element). When Fred is not loaded, attribute will be added to class of itself. \n\n\nExample\n\n\ndiv class=\nimage\n data-fred-block-class=\nwrapper\n/div\n\n\n\n\n\ndata-fred-class\n\n\nWhen Fred is loaded, value of this attribute will be added to the own class.\n\n\nExample\n\n\ndiv class=\nrow\n data-fred-class=\nvisible-grid\n/div\n\n\n\n\n\ndata-fred-bind\n\n\nValue of the element will copy from other element.\n\n\nExample\n\n\ndiv contenteditable=\ntrue\n data-fred-name=\nname\nJohn Doe\n/div\n\n\ndiv class=\nmodal\n\n    \ndiv class=\nmodal-header\n data-fred-bind=\nname\n/div\n\n    \ndiv class=\nmodal-content\nHello there\n/div\n\n\n/div\n\n\n\n\n\ndata-fred-on-drop\n\n\nName of the globally accessible function that should be called when this element is dropped to any dropzone. The function will receive fredEl as a first attribute.\n\n\nExample\n\n\ndiv class=\nclock\n data-fred-on-drop=\ninitClock\n\n\n\n\n\ndata-fred-on-setting-change\n\n\nName of the globally accessible function that should be called when element setting changes. The function will receive fredEl as first attribute.\n\n\nExample\n\n\ndiv class=\nclock\n data-fred-on-setting-change=\nreInitClock\n/div", 
+            "text": "Currently available attributes for Fred elements.\n\n\ncontenteditable\n\n\nIf set to \ntrue\n the content of the HTML element will be editable for the user, including all children.\nThis attribute has to be used with \ndata-fred-name\n to save the value.\n\n\nExample\n\n\np contenteditable=\ntrue\n data-fred-name=\ndescription\nDefault value\n/p\n\n\n\n\n\ndata-fred-name\n\n\nName for the editable HTML element. Only elements with this attribute will be saved.\nValue of this attribute has to be unique across a single Element, but you can have multiple instances of an Element on pages.\n\n\nExample\n\n\n!-- Simple editable paragraph --\n\n\np contenteditable=\ntrue\n data-fred-name=\ndescription\nDefault value\n/p\n\n\n\n!-- Editable image --\n\n\nimg src=\nhttp://via.placeholder.com/450x150\n data-fred-name=\nheader-image\n\n\n\n\n\ndata-fred-attrs\n\n\nDefines other HTML attributes (comma separated) to save with the content of the HTML element. \n\n\nExample\n\n\nimg src=\nhttp://via.placeholder.com/450x150\n alt=\nDefault Alt\n data-fred-name=\nheader-image\n data-fred-attrs=\nalt\n\n\n\n\n\ndata-fred-render\n\n\nIf set to \nfalse\n HTML element won't appear when Fred is not loaded. This allows developers to create user-friendly, self-documenting Elements that inform users what they need to do in order to create content.\n\n\nExample\n\n\np data-fred-render=\nfalse\nAdd a *Link Location* setting for this Element to make the button appear. (This will be visible only when Fred is used to create content.)\n/p\n\n\n\n\n\ndata-fred-target\n\n\nDefines Resource field to store content. Content of the HTML element will be stored in regular Content field and additionally in the specified target. This attribute can't be used on a dropzone. \n\n\nAvailable targets:\n\n\n\n\npagetitle\n\n\nlongtitle\n\n\ndescription\n\n\nintrotext\n\n\nmenutitle\n\n\nalias\n\n\n\n\nExample\n\n\nh1 data-fred-name=\ntitle\n data-fred-target=\npagetitle\n contenteditable=\ntrue\nDefault Page Title\n/h1\n\n\n\n\n\ndata-fred-rte\n\n\nIf set to \ntrue\n the Rich Text Editor will be loaded for the editable HTML element.\n\n\nExample\n\n\ndiv data-fred-name=\nrte-content\n contenteditable=\ntrue\n data-fred-rte=\ntrue\nDefault Content\n/div\n\n\n\n\n\ndata-fred-rte-config\n\n\nSpecify RTE config that should be used for the element.\n\n\nExample\n\n\ndiv data-fred-name=\nrte-content\n contenteditable=\ntrue\n data-fred-rte=\ntrue\n data-fred-rte-config=\nsimple\nDefault Content\n/div\n\n\n\n\n\ndata-fred-dropzone\n\n\nDefines a new Drop Zone for Fred Elements. This attribute cannot be empty and has to be unique across a single Element. You can create an unlimited number of Dropzones, though more than a few might get quite cumbersome. This is useful for creating alternate layouts like full width, split pages, sidebar pages, etc.\n\n\nExample\n\n\ndiv data-fred-dropzone=\nleft\n class=\nleft-content\n/div\n\n\ndiv data-fred-dropzone=\nright\n class=\nright-content\n/div\n\n\n\n\n\ndata-fred-link-type\n\n\nSets a type for a link, used for processing before generating content. Available values: \npage\n\nUsed together with other \ndata-fred-link-\n attributes.\n\n\nExample\n\n\na href=\nfred.html\n data-fred-link-type=\npage\n data-fred-link-page=\n2\nFred\n/a\n\n\n\n\n\ndata-fred-link-page\n\n\nDefines ID of MODX Resource. Value of this attribute will be used as a link's href (in MODX format \n[[~ID]]\n) when content is generated.\n\n\nExample\n\n\na href=\nfred.html\n data-fred-link-type=\npage\n data-fred-link-page=\n2\nFred\n/a\n\n\n\n\n\ndata-fred-media-source\n\n\nThis option override globals from Element Settings.\n\n\nDefines Media Source to be used for the element. ID of the media source is expected and can accommodate multiple IDs separated by comma \n,\n.\n\n\nExample\n\n\nimg src=\nhttp://via.placeholder.com/450x150\n data-fred-name=\nheader-image\n data-fred-media-source=\n1,2\n\n\n\n\n\ndata-fred-image-media-source\n\n\nThis option override globals from Element Settings and \ndata-fred-media-source\n (but only for images).\n\n\nDefines Media Source to be used for the element. ID of the media source is expected and can accommodate multiple IDs separated by comma \n,\n.\n\n\nExample\n\n\nimg src=\nhttp://via.placeholder.com/450x150\n data-fred-name=\nheader-image\n data-fred-image-media-source=\n1,2\n\n\n\n\n\ndata-fred-block-class\n\n\nWhen Fred is loaded, value of this attribute will be appended to class of \ndiv.fred--block\n (which is wrapping the whole element). When Fred is not loaded, attribute will be added to class of itself. \n\n\nExample\n\n\ndiv class=\nimage\n data-fred-block-class=\nwrapper\n/div\n\n\n\n\n\ndata-fred-class\n\n\nWhen Fred is loaded, value of this attribute will be added to the own class.\n\n\nExample\n\n\ndiv class=\nrow\n data-fred-class=\nvisible-grid\n/div\n\n\n\n\n\ndata-fred-bind\n\n\nValue of the element will copy from other element.\n\n\nExample\n\n\ndiv contenteditable=\ntrue\n data-fred-name=\nname\nJohn Doe\n/div\n\n\ndiv class=\nmodal\n\n    \ndiv class=\nmodal-header\n data-fred-bind=\nname\n/div\n\n    \ndiv class=\nmodal-content\nHello there\n/div\n\n\n/div\n\n\n\n\n\ndata-fred-on-drop\n\n\nName of the globally accessible function that should be called when this element is dropped to any dropzone. The function will receive fredEl as a first attribute.\n\n\nExample\n\n\ndiv class=\nclock\n data-fred-on-drop=\ninitClock\n\n\n\n\n\ndata-fred-on-setting-change\n\n\nName of the globally accessible function that should be called when element setting changes. The function will receive fredEl as first attribute.\n\n\nExample\n\n\ndiv class=\nclock\n data-fred-on-setting-change=\nreInitClock\n/div", 
             "title": "Attributes"
         }, 
         {
@@ -196,12 +196,22 @@
             "title": "Example"
         }, 
         {
+            "location": "/elements/attributes/#data-fred-rte-config", 
+            "text": "Specify RTE config that should be used for the element.", 
+            "title": "data-fred-rte-config"
+        }, 
+        {
+            "location": "/elements/attributes/#example_6", 
+            "text": "div data-fred-name= rte-content  contenteditable= true  data-fred-rte= true  data-fred-rte-config= simple Default Content /div", 
+            "title": "Example"
+        }, 
+        {
             "location": "/elements/attributes/#data-fred-dropzone", 
             "text": "Defines a new Drop Zone for Fred Elements. This attribute cannot be empty and has to be unique across a single Element. You can create an unlimited number of Dropzones, though more than a few might get quite cumbersome. This is useful for creating alternate layouts like full width, split pages, sidebar pages, etc.", 
             "title": "data-fred-dropzone"
         }, 
         {
-            "location": "/elements/attributes/#example_6", 
+            "location": "/elements/attributes/#example_7", 
             "text": "div data-fred-dropzone= left  class= left-content /div  div data-fred-dropzone= right  class= right-content /div", 
             "title": "Example"
         }, 
@@ -211,7 +221,7 @@
             "title": "data-fred-link-type"
         }, 
         {
-            "location": "/elements/attributes/#example_7", 
+            "location": "/elements/attributes/#example_8", 
             "text": "a href= fred.html  data-fred-link-type= page  data-fred-link-page= 2 Fred /a", 
             "title": "Example"
         }, 
@@ -221,7 +231,7 @@
             "title": "data-fred-link-page"
         }, 
         {
-            "location": "/elements/attributes/#example_8", 
+            "location": "/elements/attributes/#example_9", 
             "text": "a href= fred.html  data-fred-link-type= page  data-fred-link-page= 2 Fred /a", 
             "title": "Example"
         }, 
@@ -231,7 +241,7 @@
             "title": "data-fred-media-source"
         }, 
         {
-            "location": "/elements/attributes/#example_9", 
+            "location": "/elements/attributes/#example_10", 
             "text": "img src= http://via.placeholder.com/450x150  data-fred-name= header-image  data-fred-media-source= 1,2", 
             "title": "Example"
         }, 
@@ -241,7 +251,7 @@
             "title": "data-fred-image-media-source"
         }, 
         {
-            "location": "/elements/attributes/#example_10", 
+            "location": "/elements/attributes/#example_11", 
             "text": "img src= http://via.placeholder.com/450x150  data-fred-name= header-image  data-fred-image-media-source= 1,2", 
             "title": "Example"
         }, 
@@ -251,7 +261,7 @@
             "title": "data-fred-block-class"
         }, 
         {
-            "location": "/elements/attributes/#example_11", 
+            "location": "/elements/attributes/#example_12", 
             "text": "div class= image  data-fred-block-class= wrapper /div", 
             "title": "Example"
         }, 
@@ -261,7 +271,7 @@
             "title": "data-fred-class"
         }, 
         {
-            "location": "/elements/attributes/#example_12", 
+            "location": "/elements/attributes/#example_13", 
             "text": "div class= row  data-fred-class= visible-grid /div", 
             "title": "Example"
         }, 
@@ -271,7 +281,7 @@
             "title": "data-fred-bind"
         }, 
         {
-            "location": "/elements/attributes/#example_13", 
+            "location": "/elements/attributes/#example_14", 
             "text": "div contenteditable= true  data-fred-name= name John Doe /div  div class= modal \n     div class= modal-header  data-fred-bind= name /div \n     div class= modal-content Hello there /div  /div", 
             "title": "Example"
         }, 
@@ -281,7 +291,7 @@
             "title": "data-fred-on-drop"
         }, 
         {
-            "location": "/elements/attributes/#example_14", 
+            "location": "/elements/attributes/#example_15", 
             "text": "div class= clock  data-fred-on-drop= initClock", 
             "title": "Example"
         }, 
@@ -291,13 +301,13 @@
             "title": "data-fred-on-setting-change"
         }, 
         {
-            "location": "/elements/attributes/#example_15", 
+            "location": "/elements/attributes/#example_16", 
             "text": "div class= clock  data-fred-on-setting-change= reInitClock /div", 
             "title": "Example"
         }, 
         {
             "location": "/templates/", 
-            "text": "Fred is only loaded by templates that are defined in the setting \nfred.template_ids\n. Any resources using a template listed in that setting will block access to the content area in the manager, and load Fred on the frontend.\n\n\nDropzones\n\n\nCurrently, the only supported dropzone is \ncontent\n. In your Fred Template, you need to define where the content dropzone will be.\n\n\nExample\n\n\nhtml\n\n\nhead\n\n    \ntitle\n[[*pagetitle]]\n/title\n\n\n\n/head\n\n\nbody \n\n    \ndiv data-fred-dropzone=\ncontent\n style=\nmin-height: 200px;\n\n        [[*content]]\n    \n/div\n\n\n/body\n\n\n/html\n\n\n\n\n\nWe recommend setting a \"min-height\" property on your drop zone to make it easier to drop content in if it is empty.  The size of your min-height might change if you have competing or overlapping elements, such as a fixed top bar navigation.\n\n\nThe dropzone needs to have the attribute \ndata-fred-dropzone=\"content\"\n and needs to contain a reference to the \n[[*content]]\n tag inside of it.  When Fred loads, it clears out the content rendered in the dropzone, and loads it with element data. However, when Fred is not loaded, it just renders whatever tags you have in that area.", 
+            "text": "Fred is only loaded by templates that have Theme attached (Extras \n Fred \n Themed Templates). Any resources using a template listed in that table will block access to the content area in the manager, and load Fred on the frontend.\n\n\nDropzones\n\n\nCurrently, the only supported dropzone is \ncontent\n. In your Fred Template, you need to define where the content dropzone will be.\n\n\nExample\n\n\nhtml\n\n\nhead\n\n    \ntitle\n[[*pagetitle]]\n/title\n\n\n\n/head\n\n\nbody \n\n    \ndiv data-fred-dropzone=\ncontent\n style=\nmin-height: 200px;\n\n        [[*content]]\n    \n/div\n\n\n/body\n\n\n/html\n\n\n\n\n\nWe recommend setting a \"min-height\" property on your drop zone to make it easier to drop content in if it is empty.  The size of your min-height might change if you have competing or overlapping elements, such as a fixed top bar navigation.\n\n\nThe dropzone needs to have the attribute \ndata-fred-dropzone=\"content\"\n and needs to contain a reference to the \n[[*content]]\n tag inside of it.  When Fred loads, it clears out the content rendered in the dropzone, and loads it with element data. However, when Fred is not loaded, it just renders whatever tags you have in that area.", 
             "title": "Templates"
         }, 
         {
@@ -347,13 +357,13 @@
         }, 
         {
             "location": "/system_settings/", 
-            "text": "Fred system settings control how your site reacts. Since Fred is loaded on the frontend, you can change how these works per-context, user, or group.\n\n\nDefault Element\n\n\nThe default element settings allows you to chose a default Fred element and target area for placing the content on existing documents. The setting is formatted as \nID|target\n where ID is the identification number of the Chunk and the target is the HTML element within that Chunk identified with a \ndata-fred-name\n attribute.\n\n\nExample Chunk: Content Area (13)\n\n\nsection class=\ncontainer\n\n    \ndiv contenteditable=\ntrue\n data-fred-name=\ncontent\n data-fred-rte=\ntrue\n\n    \n/div\n\n\n/section\n\n\n\n\n\nYou would set the value to be \n13|content\n\n\nElement's Group Sort\n\n\nBy default element categories are sorted by \nname\n, but you can switch it to use the \nrank\n if you want them to be sorted in a specific order.\n\n\nElement's Category ID\n\n\nTo display, Fred needs to be fed an Element Category ID, which can be found in the \"Categories\" section of the Elements tab. The Element Category also needs sub-categories to display properly. Any Chunks left un-categorized will not display.\n\n\nIcon Editor\n\n\nFred can use plugins that tap into different element types. The Icon Editor targets \ni\n elements that also have a \ndata-fred-name\n attribute.\n\n\nImage Editor\n\n\nFred can use plugins that tap into different element types. The Image Editor targets \nimg\n elements that also have a \ndata-fred-name\n attribute.\n\n\nPosition of Launcher\n\n\nThe Fred launcher can be positioned in any corner of the site to prevent hiding an element on your design. Options include: \nbottom_left\n, \nbottom\n, \nbottom_right\n, \ntop_left\n, \ntop\n, and \ntop_right\n.\n\n\nRich Text Editor\n\n\nFred can use plugins that tap into different element types. The Image Editor targets any wrapper elements that also have a \ndata-fred-name\n attribute and are set to \ncontenteditable=\"true\" data-fred-rte=\"true\"\n.\n\n\nTemplate IDs\n\n\nThe Template IDs are a comma separated list of templates to launch Fred on. Fred Templates can not have the content area edited in the backend, and existing templates that are switched to Fred Templates will have the content wrapped in the \nDefault Element\n.", 
+            "text": "Fred system settings control how your site reacts. Since Fred is loaded on the frontend, you can change how these works per-context, user, or group.\n\n\nDefault Element (fred.default_element)\n\n\nThe default element settings allows you to chose a default Fred element and target area for placing the content on existing documents. The setting is formatted as \nID|target\n where ID is the identification number of the Chunk and the target is the HTML element within that Chunk identified with a \ndata-fred-name\n attribute.\n\n\nExample Chunk: Content Area (13)\n\n\nsection class=\ncontainer\n\n    \ndiv contenteditable=\ntrue\n data-fred-name=\ncontent\n data-fred-rte=\ntrue\n\n    \n/div\n\n\n/section\n\n\n\n\n\nYou would set the value to be \n13|content\n\n\nElement's Group Sort (fred.element_group_sort)\n\n\nBy default element categories are sorted by \nname\n, but you can switch it to use the \nrank\n if you want them to be sorted in a specific order.\n\n\nBlueprint Sort (fred.blueprint_sort)\n\n\nBy default blueprints are sorted by \nname\n, but you can switch it to use the \nrank\n if you want them to be sorted in a specific order.\n\n\nBlueprint's Category Sort (fred.blueprint_category_sort)\n\n\nBy default blueprint categories are sorted by \nname\n, but you can switch it to use the \nrank\n if you want them to be sorted in a specific order.\n\n\nIcon Editor (fred.icon_editor)\n\n\nFred can use plugins that tap into different element types. The Icon Editor targets \ni\n elements that also have a \ndata-fred-name\n attribute.\n\n\nImage Editor (fred.image_editor)\n\n\nFred can use plugins that tap into different element types. The Image Editor targets \nimg\n elements that also have a \ndata-fred-name\n attribute.\n\n\nPosition of Launcher (fred.launcher_position)\n\n\nThe Fred launcher can be positioned in any corner of the site to prevent hiding an element on your design. Options include: \nbottom_left\n, \nbottom\n, \nbottom_right\n, \ntop_left\n, \ntop\n, and \ntop_right\n.\n\n\nRich Text Editor (fred.rte)\n\n\nFred can use plugins that tap into different element types. The Image Editor targets any wrapper elements that also have a \ndata-fred-name\n attribute and are set to \ncontenteditable=\"true\" data-fred-rte=\"true\"\n.\n\n\nGenerated Images Path (fred.generated_images_path)\n\n\nPath to the folder where automatically generated images (screenshots of blueprints and elements) will be stored. \n{assets_path}\n placeholder can be used to replace with current assets folder path.\n\n\nGenerated Images URL (fred.generated_images_url)\n\n\nURL to the folder where automatically generated images (screenshots of blueprints and elements) will be stored. \nassets_url\n placeholder can be used to replace with current assets folder URL.", 
             "title": "System Settings"
         }, 
         {
-            "location": "/system_settings/#default-element", 
+            "location": "/system_settings/#default-element-freddefault_element", 
             "text": "The default element settings allows you to chose a default Fred element and target area for placing the content on existing documents. The setting is formatted as  ID|target  where ID is the identification number of the Chunk and the target is the HTML element within that Chunk identified with a  data-fred-name  attribute.", 
-            "title": "Default Element"
+            "title": "Default Element (fred.default_element)"
         }, 
         {
             "location": "/system_settings/#example-chunk-content-area-13", 
@@ -361,39 +371,49 @@
             "title": "Example Chunk: Content Area (13)"
         }, 
         {
-            "location": "/system_settings/#elements-group-sort", 
+            "location": "/system_settings/#elements-group-sort-fredelement_group_sort", 
             "text": "By default element categories are sorted by  name , but you can switch it to use the  rank  if you want them to be sorted in a specific order.", 
-            "title": "Element's Group Sort"
+            "title": "Element's Group Sort (fred.element_group_sort)"
         }, 
         {
-            "location": "/system_settings/#elements-category-id", 
-            "text": "To display, Fred needs to be fed an Element Category ID, which can be found in the \"Categories\" section of the Elements tab. The Element Category also needs sub-categories to display properly. Any Chunks left un-categorized will not display.", 
-            "title": "Element's Category ID"
+            "location": "/system_settings/#blueprint-sort-fredblueprint_sort", 
+            "text": "By default blueprints are sorted by  name , but you can switch it to use the  rank  if you want them to be sorted in a specific order.", 
+            "title": "Blueprint Sort (fred.blueprint_sort)"
         }, 
         {
-            "location": "/system_settings/#icon-editor", 
+            "location": "/system_settings/#blueprints-category-sort-fredblueprint_category_sort", 
+            "text": "By default blueprint categories are sorted by  name , but you can switch it to use the  rank  if you want them to be sorted in a specific order.", 
+            "title": "Blueprint's Category Sort (fred.blueprint_category_sort)"
+        }, 
+        {
+            "location": "/system_settings/#icon-editor-fredicon_editor", 
             "text": "Fred can use plugins that tap into different element types. The Icon Editor targets  i  elements that also have a  data-fred-name  attribute.", 
-            "title": "Icon Editor"
+            "title": "Icon Editor (fred.icon_editor)"
         }, 
         {
-            "location": "/system_settings/#image-editor", 
+            "location": "/system_settings/#image-editor-fredimage_editor", 
             "text": "Fred can use plugins that tap into different element types. The Image Editor targets  img  elements that also have a  data-fred-name  attribute.", 
-            "title": "Image Editor"
+            "title": "Image Editor (fred.image_editor)"
         }, 
         {
-            "location": "/system_settings/#position-of-launcher", 
+            "location": "/system_settings/#position-of-launcher-fredlauncher_position", 
             "text": "The Fred launcher can be positioned in any corner of the site to prevent hiding an element on your design. Options include:  bottom_left ,  bottom ,  bottom_right ,  top_left ,  top , and  top_right .", 
-            "title": "Position of Launcher"
+            "title": "Position of Launcher (fred.launcher_position)"
         }, 
         {
-            "location": "/system_settings/#rich-text-editor", 
+            "location": "/system_settings/#rich-text-editor-fredrte", 
             "text": "Fred can use plugins that tap into different element types. The Image Editor targets any wrapper elements that also have a  data-fred-name  attribute and are set to  contenteditable=\"true\" data-fred-rte=\"true\" .", 
-            "title": "Rich Text Editor"
+            "title": "Rich Text Editor (fred.rte)"
         }, 
         {
-            "location": "/system_settings/#template-ids", 
-            "text": "The Template IDs are a comma separated list of templates to launch Fred on. Fred Templates can not have the content area edited in the backend, and existing templates that are switched to Fred Templates will have the content wrapped in the  Default Element .", 
-            "title": "Template IDs"
+            "location": "/system_settings/#generated-images-path-fredgenerated_images_path", 
+            "text": "Path to the folder where automatically generated images (screenshots of blueprints and elements) will be stored.  {assets_path}  placeholder can be used to replace with current assets folder path.", 
+            "title": "Generated Images Path (fred.generated_images_path)"
+        }, 
+        {
+            "location": "/system_settings/#generated-images-url-fredgenerated_images_url", 
+            "text": "URL to the folder where automatically generated images (screenshots of blueprints and elements) will be stored.  assets_url  placeholder can be used to replace with current assets folder URL.", 
+            "title": "Generated Images URL (fred.generated_images_url)"
         }, 
         {
             "location": "/events/", 
@@ -409,6 +429,61 @@
             "location": "/events/#fredelementsettingchange", 
             "text": "This event will trigger when element setting on any element is changed. You can access fredEl from the  event.detail.fredEl  object.", 
             "title": "FredElementSettingChange"
+        }, 
+        {
+            "location": "/cmp/elements/", 
+            "text": "Creating Element\n\n\nElement properties:\n\n\n\n\nName - Required\n\n\nDescription - Optional\n\n\nImage - Required\n\n\nCategory - Required\n\n\nRank - Optional\n\n\nMarkup - Optional; HTML + Twig markup for the element, enhanced by \nspecial attributes\n\n\nOption Set - Optional; Complete Option Set can be selected here\n\n\nOptions Override - Optional; Override selected Option Set, or define one time options for this element", 
+            "title": "Elements"
+        }, 
+        {
+            "location": "/cmp/elements/#creating-element", 
+            "text": "Element properties:   Name - Required  Description - Optional  Image - Required  Category - Required  Rank - Optional  Markup - Optional; HTML + Twig markup for the element, enhanced by  special attributes  Option Set - Optional; Complete Option Set can be selected here  Options Override - Optional; Override selected Option Set, or define one time options for this element", 
+            "title": "Creating Element"
+        }, 
+        {
+            "location": "/cmp/element_categories/", 
+            "text": "Under Categories tab you can manage all Categories for Fred Elements.\n\n\n\n\nPlease note that if you remove a category, all Elements attached to it will be removed as well, which may break your site.", 
+            "title": "Element Categories"
+        }, 
+        {
+            "location": "/cmp/option_sets/", 
+            "text": "Option Set is an ideal way how to attach same set of options to multiple Elements.\n\n\n\n\nCreating Option Set\n\n\nOption Set properties:\n\n\n\n\nName - Required, has to be unique\n\n\nDescription - Optional\n\n\nComplete - Yes/No flag, if set to Yes, the Option Set will appear in select box when creating/updating Element. Setting it to No is usefull for partial Option Sets for import only purpose.\n\n\nData - JSON with \nElement options", 
+            "title": "Option Sets"
+        }, 
+        {
+            "location": "/cmp/option_sets/#creating-option-set", 
+            "text": "Option Set properties:   Name - Required, has to be unique  Description - Optional  Complete - Yes/No flag, if set to Yes, the Option Set will appear in select box when creating/updating Element. Setting it to No is usefull for partial Option Sets for import only purpose.  Data - JSON with  Element options", 
+            "title": "Creating Option Set"
+        }, 
+        {
+            "location": "/cmp/rte_configs/", 
+            "text": "Under RTE Configs tab you can manage all configuration sets for all installed RTEs.\n\n\n\n\nWhen creating new RTE config, you have to give it a unique name, which is used as a config identifier in \ndata-fred-rte-config\n attribute.\n\n\nPlease make sure that the config is a valid JSON, you can use \nJSON Lint\n in case you don't have \nACE editor\n installed.\n\n\nDefault configs\n\n\nIf you create a config with a same name as your RTE, for example \nTinyMCE\n, this config will be used as a default one (instead of the one TinyMCE is shipped with) when you don't specify \ndata-fred-rte-config\n attribute.", 
+            "title": "RTE Configs"
+        }, 
+        {
+            "location": "/cmp/rte_configs/#default-configs", 
+            "text": "If you create a config with a same name as your RTE, for example  TinyMCE , this config will be used as a default one (instead of the one TinyMCE is shipped with) when you don't specify  data-fred-rte-config  attribute.", 
+            "title": "Default configs"
+        }, 
+        {
+            "location": "/cmp/blueprints/", 
+            "text": "", 
+            "title": "Blueprints"
+        }, 
+        {
+            "location": "/cmp/blueprint_categories/", 
+            "text": "", 
+            "title": "Blueprint Categories"
+        }, 
+        {
+            "location": "/cmp/themes/", 
+            "text": "", 
+            "title": "Themes"
+        }, 
+        {
+            "location": "/cmp/themed_templates/", 
+            "text": "", 
+            "title": "Themed Templates"
         }
     ]
 }

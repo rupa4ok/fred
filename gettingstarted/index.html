@@ -294,15 +294,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-create-the-category-structure-for-your-elements" title="Step 3: Create the category structure for your elements" class="md-nav__link">
-    Step 3: Create the category structure for your elements
+  <a href="#step-3-instruct-fred-to-use-your-template" title="Step 3: Instruct Fred to use your template" class="md-nav__link">
+    Step 3: Instruct Fred to use your template
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-instruct-fred-to-use-your-template-and-categories" title="Step 4: Instruct Fred to use your template and categories" class="md-nav__link">
-    Step 4: Instruct Fred to use your template and categories
+  <a href="#step-4-create-the-category-structure-for-your-elements" title="Step 4: Create the category structure for your elements" class="md-nav__link">
+    Step 4: Create the category structure for your elements
   </a>
   
 </li>
@@ -369,8 +369,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../elements/settings/" title="Settings" class="md-nav__link">
-      Settings
+    <a href="../elements/options/" title="Options" class="md-nav__link">
+      Options
     </a>
   </li>
 
@@ -440,6 +440,126 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      CMP
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        CMP
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmp/elements/" title="Elements" class="md-nav__link">
+      Elements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmp/element_categories/" title="Element Categories" class="md-nav__link">
+      Element Categories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmp/option_sets/" title="Option Sets" class="md-nav__link">
+      Option Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmp/rte_configs/" title="RTE Configs" class="md-nav__link">
+      RTE Configs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmp/blueprints/" title="Blueprints" class="md-nav__link">
+      Blueprints
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmp/blueprint_categories/" title="Blueprint Categories" class="md-nav__link">
+      Blueprint Categories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmp/themes/" title="Themes" class="md-nav__link">
+      Themes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmp/themed_templates/" title="Themed Templates" class="md-nav__link">
+      Themed Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -475,15 +595,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-create-the-category-structure-for-your-elements" title="Step 3: Create the category structure for your elements" class="md-nav__link">
-    Step 3: Create the category structure for your elements
+  <a href="#step-3-instruct-fred-to-use-your-template" title="Step 3: Instruct Fred to use your template" class="md-nav__link">
+    Step 3: Instruct Fred to use your template
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-instruct-fred-to-use-your-template-and-categories" title="Step 4: Instruct Fred to use your template and categories" class="md-nav__link">
-    Step 4: Instruct Fred to use your template and categories
+  <a href="#step-4-create-the-category-structure-for-your-elements" title="Step 4: Create the category structure for your elements" class="md-nav__link">
+    Step 4: Create the category structure for your elements
   </a>
   
 </li>
@@ -526,8 +646,8 @@
 <ol>
 <li>Install <a href="https://modx.com/extras/package/fred">Fred from MODX.com</a></li>
 <li>Set up a template with the content dropzone</li>
-<li>Create a category structure to hold your elements</li>
-<li>Instruct Fred to activate on your template and to use your categories</li>
+<li>Instruct Fred to use your template</li>
+<li>Create the category structure for your elements</li>
 <li>Create your first elements</li>
 </ol>
 <h2 id="step-1-install-fred">Step 1: Install Fred</h2>
@@ -543,44 +663,39 @@
 </code></pre>
 <p>Note the <code>data-fred-dropzone="content"</code> attribute - that is required and needs to have a value of content. It tells Fred that this is your main content field and needs to be managed as such.</p>
 <p>The <code>min-height</code> style is optional, but helps with making it easier to drop the first element into your content later.</p>
-<h2 id="step-3-create-the-category-structure-for-your-elements">Step 3: Create the category structure for your elements</h2>
-<p>Before you can start adding elements, you'll need some elements!</p>
-<p>Fred structures elements into categories, two levels deep. You first need a container category. That category will then have any number of subcategories that will contain your actual elements.</p>
-<p>For example, your category structure could look like this:</p>
+<h2 id="step-3-instruct-fred-to-use-your-template">Step 3: Instruct Fred to use your template</h2>
+<p>Now that we've created the basic template, let's tell Fred about it!</p>
 <ul>
-<li>Fred Elements<ul>
+<li>Go to Extras &gt; Fred and switch to <code>Themed Templates</code> tab.</li>
+<li>Click the <code>Assign Theme to a Template</code> button</li>
+<li>Select all Templates you'll want to use with fred</li>
+<li>Select <code>Default</code> Theme</li>
+<li>Click <code>Save</code></li>
+</ul>
+<p>Now you should be able of visiting a resource that uses your template from step 2 and see either the "Open in Fred" button (in the manager), or the Fred launcher in the bottom left of the page (in the frontend). That tells us we're on the right path, now we need to create some categories and elements.</p>
+<h2 id="step-4-create-the-category-structure-for-your-elements">Step 4: Create the category structure for your elements</h2>
+<p>Before you can start adding elements, you'll need some categories!</p>
+<p>Fred structures elements into categories. Open Element's CMP (Extras &gt; Fred &gt; Elements), switch to <code>Categories</code> tab and create categories that will later contain your actual elements.</p>
+<p>For example, your categories could look like this:</p>
+<ul>
 <li>Text</li>
 <li>Images</li>
 <li>Widgets</li>
 </ul>
-</li>
-</ul>
-<p>Within the "Text", "Images" and "Widgets" categories you will create Chunks that act as the unique element types available to your content builder. </p>
-<p>For now, create a "Fred Elements" category and at least one subcategory, for example "Text", and let's move on to tell Fred where to look.</p>
-<h2 id="step-4-instruct-fred-to-use-your-template-and-categories">Step 4: Instruct Fred to use your template and categories</h2>
-<p>Now that we've created the basic template and our category structure, let's tell Fred about it!</p>
-<p>Go to System &gt; System Settings in MODX and select Fred in the namespace dropdown (the one that defaults to "core"). There are a number of options available to you here, but we're most concerned with the following 2:</p>
-<ul>
-<li>Set <code>fred.template_ids</code> to the ID of the template you added the dropzone to in step 2</li>
-<li>Set <code>fred.elements_category_id</code> to the ID of the root category you created to hold the subcategories and elements. This is the one with the name "Fred Elements" in our example. To find the category ID, look under Elements &gt; Categories, the ID is the number between brackets there.</li>
-</ul>
-<p>Now you should be able of visiting a resource that uses your template from step 2 and see either the "Open in Fred" button (in the manager), or the Fred launcher in the bottom left of the page (in the frontend). That tells us we're on the right path, now we need to create some elements.</p>
+<p>Later you'll create Elements and assign them to the "Text", "Images" or "Widgets" categories. </p>
+<p>For now, create at least one category, for example "Text", and let's move on to create some Elements.</p>
 <h2 id="step-5-create-your-first-elements">Step 5: Create your first elements</h2>
 <p>Let's start by creating a heading element, often the first thing on a page. </p>
-<p>Create a chunk in the Fred Elements &gt; Text category with name <code>heading</code>. Give it the following content:</p>
+<p>Switch to the <code>Elements</code> tab in Element's CMP (Extras &gt; Fred &gt; Elements) and hit <code>Create Element</code> button. Fill the name (<code>heading</code>), category (<code>Text</code>), image (<code>https://placehold.it/300x150&amp;text=Heading</code>) and use following Element's Markup:</p>
 <pre><code>&lt;h1 contenteditable="true" data-fred-name="heading"&gt;Hello, world.&lt;/h1&gt;
 </code></pre>
-<p>For the description, add: </p>
-<pre><code>image:https://placehold.it/300x150&amp;text=Heading
-</code></pre>
-<p>You can read more about the description field in the Elements &gt; Setting documentation, for now just trust that it's a good idea to add that option.</p>
-<p>Save your chunk and go back to the frontend of your resource, refreshing the page.</p>
-<p>Click on the orange elements icon or the MODX icon in the launcher at the bottom left of the page. In the Elements tab of the sidebar, you should see the subcategories you created earlier in step 3. Hover over the Text category to see your Heading element, and drag it into the empty content. </p>
+<p>Save your Element and go back to the frontend of your resource, refreshing the page.</p>
+<p>Click on the orange elements icon or the MODX icon in the launcher at the bottom left of the page. In the Elements tab of the sidebar, you should see the categories you created earlier in step 4. Hover over the Text category to see your Heading element, and drag it into the empty content. </p>
 <p>Congratulations, you just added your first element to a page!</p>
 <p>Now that it's in place, you can click on it to edit its text. By hovering over an element you'll see an additional toolbar that lets you duplicate, delete, or move the element on your page. </p>
-<p>Let's create another element for simple text. Create a chunk under Fred Elements &gt; Text with the name <code>paragraph</code>, <code>image:https://placehold.it/300x150&amp;text=Paragraph</code> as description, and <code>&lt;p contenteditable="true" data-fred-name="paragraph"&gt;Your content goes here.&lt;/p&gt;</code> as content. Save, and refresh the frontend. Try inserting your element and moving it across the page. </p>
+<p>Let's create another element for simple text. Create an Element under same category with the name <code>paragraph</code>, <code>https://placehold.it/300x150&amp;text=Paragraph</code> as image, and <code>&lt;p contenteditable="true" data-fred-name="paragraph"&gt;Your content goes here.&lt;/p&gt;</code> as markup. Save, and refresh the frontend. Try inserting your element and moving it across the page. </p>
 <h2 id="learn-more">Learn more</h2>
-<p>Now that you have the basics of Fred working, you can learn more about the different types of elements you can create. These are all created as chunks, with special data attributes to indicate how they should be treated and saved. </p>
+<p>Now that you have the basics of Fred working, you can learn more about the different types of elements you can create. </p>
                 
                   
                 
