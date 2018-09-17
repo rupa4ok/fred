@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.2">
     
     
       
@@ -98,7 +98,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#creating-element" tabindex="1" class="md-skip">
+      <a href="#elements" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -399,6 +399,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Elements
@@ -412,6 +414,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -419,6 +423,20 @@
         <li class="md-nav__item">
   <a href="#creating-element" title="Creating Element" class="md-nav__link">
     Creating Element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-images" title="Element images" class="md-nav__link">
+    Element images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-elements" title="Updating Elements" class="md-nav__link">
+    Updating Elements
   </a>
   
 </li>
@@ -537,6 +555,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -544,6 +564,20 @@
         <li class="md-nav__item">
   <a href="#creating-element" title="Creating Element" class="md-nav__link">
     Creating Element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-images" title="Element images" class="md-nav__link">
+    Element images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-elements" title="Updating Elements" class="md-nav__link">
+    Updating Elements
   </a>
   
 </li>
@@ -567,22 +601,32 @@
                   <a href="https://github.com/modxcms/fred/edit/master/docs/cmp/elements.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Elements</h1>
-                
-                <h3 id="creating-element">Creating Element</h3>
-<p>Element properties:</p>
+                <h1 id="elements">Elements</h1>
+<p>Elements are the fundamental starting point for </p>
+<h2 id="creating-element">Creating Element</h2>
+<p>The following are the properties for each Element:</p>
 <ul>
-<li>Name - Required</li>
-<li>Description - Optional</li>
-<li>Image - Required</li>
-<li>Category - Required</li>
-<li>Rank - Optional</li>
-<li>Markup - Optional; HTML + Twig markup for the element, enhanced by <a href="../../elements/attributes">special attributes</a></li>
-<li>Option Set - Optional; Complete Option Set can be selected here</li>
-<li>Options Override - Optional; Override selected Option Set, or define one time options for this element</li>
+<li><strong>Name</strong> - Required. What you wish to call the Element.</li>
+<li><strong>Description</strong> - Optional. A brief description for the Element.</li>
+<li><strong>Image</strong> - Required. If you do not specify an image, a default gray box with the Element name will be created for you. Images are used as the sources for dragging and dropping Elements into your Layouts. </li>
+<li><strong>Category</strong> - Required. Which category to place this Element under.</li>
+<li><strong>Rank</strong> - Optional. The order you wish this Element to show in its category.</li>
+<li><strong>Markup</strong> - Optional. HTML + Twig markup for the element, including <a href="../../elements/attributes">Fred-specific attributes</a> which allow you to control things like save targets, visibility when creating or viewing content, etc.</li>
+<li><strong>Option Set</strong> - Optional. Complete Option Set can be selected here</li>
+<li><strong>Options Override</strong> - Optional. Override selected Option Set, or define one time options for this element</li>
 </ul>
 <p><img alt="Element Panel" src="../img/element_panel.png" /></p>
 <p><img alt="Element Panel Options" src="../img/element_panel_options.png" /></p>
+<h2 id="element-images">Element images</h2>
+<p>Element images are thumbnail previews used to drag-and-drop onto pages. You can create your own images/previews/screengrabs for Elements, or Fred can create ones for you in one of two ways:</p>
+<ul>
+<li>a gray box with the Element’s name centered in the gray box (this is the default unless you provide an image)</li>
+<li>after an Element is used, and if you have the "Take Screenshots" permission, clicking the camera icon above the Element when focused.</li>
+</ul>
+<p><strong>Note:</strong> the library used to take screenshots is very good, but it doesn't understand some CSS properties and may not render the screenshots optimially for your use case. For best results make sure that manual Element screenshots are 500px wide.</p>
+<h2 id="updating-elements">Updating Elements</h2>
+<p>Unlike Blueprints, Elements are like master templates which can be updated at any time. When an Element's markup or option set is updated, all places in a site should update to reflect these changes. </p>
+<p>To see the updated results, either resave the page, or use the "Rebuild" tab in the Fred 3PC.</p>
                 
                   
                 

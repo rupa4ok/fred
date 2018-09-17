@@ -2,87 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/gettingstarted/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/elements/markup/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/elements/options/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/elements/attributes/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/templates/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/media_sources/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/system_settings/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/events/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/cmp/elements/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/cmp/element_categories/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/cmp/option_sets/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/cmp/rte_configs/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/cmp/blueprints/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/cmp/blueprint_categories/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/cmp/themes/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/cmp/themed_templates/</loc>
-     <lastmod>2018-08-27</lastmod>
+     <lastmod>2018-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
