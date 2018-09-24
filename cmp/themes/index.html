@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.2">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
     
     
       
@@ -284,6 +284,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../elements/" title="Elements" class="md-nav__link">
+      Elements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../elements/markup/" title="Markup" class="md-nav__link">
       Markup
     </a>
@@ -316,6 +328,42 @@
         
       </ul>
     </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../blueprints/" title="Blueprints" class="md-nav__link">
+      Blueprints
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../option_sets/" title="Option Sets" class="md-nav__link">
+      Option Sets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../rte_configs/" title="RTE Configs" class="md-nav__link">
+      RTE Configs
+    </a>
   </li>
 
     
@@ -376,13 +424,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-11">
       CMP
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-11">
         CMP
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -432,6 +480,18 @@
   <li class="md-nav__item">
     <a href="../rte_configs/" title="RTE Configs" class="md-nav__link">
       RTE Configs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rebuild/" title="Rebuild" class="md-nav__link">
+      Rebuild
     </a>
   </li>
 
@@ -508,13 +568,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-sets" title="Option Sets" class="md-nav__link">
-    Option Sets
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#blueprints" title="Blueprints" class="md-nav__link">
     Blueprints
   </a>
@@ -529,8 +582,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#categories" title="Categories" class="md-nav__link">
+    Categories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extras" title="Extras" class="md-nav__link">
+    Extras
   </a>
   
 </li>
@@ -625,13 +685,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-sets" title="Option Sets" class="md-nav__link">
-    Option Sets
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#blueprints" title="Blueprints" class="md-nav__link">
     Blueprints
   </a>
@@ -646,8 +699,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#categories" title="Categories" class="md-nav__link">
+    Categories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extras" title="Extras" class="md-nav__link">
+    Extras
   </a>
   
 </li>
@@ -699,42 +759,29 @@
                 
                 <h1 id="about-fred-themes">About Fred Themes</h1>
 <p>While most users will typically only have a single theme, you can have many installed in a site. Themes include all the things needed to create a site <em>except</em> example resources/content (caveat, see Blueprints below). </p>
-<p>Being able to have multiple Themes allows Theme Builders to create and release a variety themes that share common settings (Option sets) across Elements.</p>
+<p>Being able to have multiple Themes allows Theme Builders to create and release a variety themes that share common options (Option sets) across Elements.</p>
 <h2 id="what-makes-up-a-theme">What makes up a Theme</h2>
 <p>Themes are made of of multple things:</p>
 <ul>
 <li><a href="#elements">Elements</a></li>
-<li><a href="#option-sets">Option Sets</a></li>
 <li><a href="#blueprints">Blueprints</a></li>
 <li><a href="#templates-and-tvs">MODX Templates and any TVs assigned to them</a></li>
-<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#categories">Categories</a></li>
+<li><a href="#extras">Extras</a></li>
 <li><a href="#assets">Assets</a></li>
 <li><a href="#license-changelog-and-readme-files">License, Changelog and Readme files</a></li>
 </ul>
-<p>When you create a Theme, Fred will autoamatically create a directory named for the theme in <code>assets/themes/{{theme-name}}</code>. Use this to store all your theme-specific assets like images, css, fonts and javascript. </p>
+<p>When you create a Theme, Fred will automatically create a directory named for the theme in <code>assets/themes/{{theme-name}}</code>. Use this to store all your theme-specific assets like images, css, fonts and javascript. </p>
 <h3 id="elements">Elements</h3>
-<p>Elements are the various design patterns used in a theme. Elements typically include HTML markup and can be configured by using Settings for the Element accessed via the gear icon. Elements can also include logic by using Twig in the markup to do things like show or hide certain things depending on the conditions you set.</p>
-<h3 id="option-sets">Option Sets</h3>
-<p>Option Sets are controls that allow you to configure an Element. The following inputs are available in Option Sets:</p>
-<ul>
-<li>text</li>
-<li>textarea</li>
-<li>select list</li>
-<li>toggle</li>
-<li>slider</li>
-<li>image picker with preview</li>
-<li>file picker</li>
-<li>simple color picker</li>
-<li>advanced color picker</li>
-<li>MODX Resource chooser</li>
-</ul>
+<p>A Theme Builder will automatically include all Element Categories attached to the Theme with all their <a href="../../elements">Elements</a>. All <a href="../../option_sets">Option Sets</a> and <a href="../../rte_configs">RTE Configs</a> attached to the Theme will be also included.</p>
 <h3 id="blueprints">Blueprints</h3>
-<p>Blueprints are pre-designed blocks or full pages of content including text and/or assets and one or more Elements. These are great starting points for structured content like landing pages, product pages, etc.</p>
-<p>You can also use Blueprints for demo pages that users of your theme can use to get started more quickly. This allows you to include fully complete layouts made up of any combination of content and Elements you wish without worrying about Resource ID conflicts when installing a theme into an existing site.</p>
+<p>A Theme Builder will automatically include <strong>public</strong> Blueprint Categories attached to the THeme with all their <strong>public</strong> <a href="../../blueprints">Blueprints</a>. </p>
 <h3 id="templates-and-tvs">Templates and TVs</h3>
-<p>A Theme Builder can choose one or more MODX Templates to include in a Theme. Any TVs assigned to those themes will also be included.</p>
-<h3 id="dependencies">Dependencies</h3>
-<p>MODX Package Dependencies are any any Snippets or Plugins that are needed for this theme to work. <code>Fred</code> itself will always be a dependency and is included by default.</p>
+<p>A Theme Builder will include all MODX Templates assigned to the Theme. Any TVs assigned to those MODX Templates will also be included.</p>
+<h3 id="categories">Categories</h3>
+<p>A User can select any root MODX Category to be included with the Theme. The Theme Builder will then include all child categories, snippets, chunks and plugins assigned to the root or child category.</p>
+<h3 id="extras">Extras</h3>
+<p>Extras are MODX packages required for your theme to be fully functional. User will need to install all of the listed extras, before he can proceed with installing your Theme. <code>Fred</code> itself will always be a dependency and is included by default.</p>
 <h3 id="assets">Assets</h3>
 <p>Theme-specific assets like CSS/SASS/SCSS, images, JS and other similar files are packed into each theme in the <code>assets/theme/{{your-theme-name}}</code> directory.</p>
 <h3 id="license-changelog-and-readme-files">License, Changelog and Readme Files</h3>
@@ -745,7 +792,7 @@
 <li>Click on the "Themes" tab.</li>
 <li>Find the Theme you'd like to share/publish.</li>
 <li>Right-click on its name and choose the Build theme option.</li>
-<li>Fill in the details and choose one of the two export options at the bottom. A copy of the theme will be saved to your <code>core/packages/{{theme-name}}</code> directory.</li>
+<li>Fill in the details and choose one of the two export options at the bottom. A built theme will be saved to your <code>core/packages/</code> directory as <code>{{theme-name}}.transport.zip</code> file that you can distribute.</li>
 </ol>
                 
                   
