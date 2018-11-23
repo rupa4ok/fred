@@ -404,8 +404,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
+  <a href="#simple-fred-template-example-with-one-dropzone" title="Simple Fred Template Example with One Dropzone" class="md-nav__link">
+    Simple Fred Template Example with One Dropzone
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-dropzones" title="Multiple Dropzones" class="md-nav__link">
+    Multiple Dropzones
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fred-template-example-with-sidebar-dropzone" title="Fred Template Example with sidebar Dropzone" class="md-nav__link">
+    Fred Template Example with sidebar Dropzone
   </a>
   
 </li>
@@ -693,8 +713,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
+  <a href="#simple-fred-template-example-with-one-dropzone" title="Simple Fred Template Example with One Dropzone" class="md-nav__link">
+    Simple Fred Template Example with One Dropzone
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-dropzones" title="Multiple Dropzones" class="md-nav__link">
+    Multiple Dropzones
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fred-template-example-with-sidebar-dropzone" title="Fred Template Example with sidebar Dropzone" class="md-nav__link">
+    Fred Template Example with sidebar Dropzone
   </a>
   
 </li>
@@ -725,25 +765,52 @@
                 
                   <h1>Templates</h1>
                 
-                <p>Fred is only loaded by templates that have Theme attached (Extras &gt; Fred &gt; Themed Templates). Any resources using a template listed in that table will block access to the content area in the manager, and load Fred on the frontend.</p>
+                <p>Fred is only loads on Pages which use MODX Templates that are assigned to a Fred Theme (<code>Extras</code> &gt; <code>Fred</code> &gt; <code>Themed Templates</code>). Any Resources using a template listed in that table will block access to the content area in the Manager and load Fred on the front-end when logged in for editing.</p>
 <h3 id="dropzones">Dropzones</h3>
-<p>Currently, the only supported dropzone is <em>content</em>. In your Fred Template, you need to define where the content dropzone will be.</p>
-<h4 id="example">Example</h4>
+<p>Most templates will have a <em>content</em> Dropzone. Fred also supports multiple Dropzones for things like sidebars, headers, footers, or any other purpose you need. In your Fred Templates, you need to define where Dropzones will be by using <code>data-fred-…</code> attributes with HTML.</p>
+<h4 id="simple-fred-template-example-with-one-dropzone">Simple Fred Template Example with One Dropzone</h4>
 <pre><code>&lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;[[*pagetitle]]&lt;/title&gt;
 
 &lt;/head&gt;
 &lt;body &gt;
-    &lt;div data-fred-dropzone=&quot;content&quot; style=&quot;min-height: 200px;&quot;&gt;
-        [[*content]]
+    &lt;div data-fred-dropzone=&quot;content&quot; data-fred-min-height=&quot;500px&quot;&gt;
+        [[*content:default=`&lt;h1&gt;Drop Elements here to start…&lt;/h1&gt;`]]
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 
-<p>We recommend setting a "min-height" property on your drop zone to make it easier to drop content in if it is empty.  The size of your min-height might change if you have competing or overlapping elements, such as a fixed top bar navigation.</p>
-<p>The dropzone needs to have the attribute <code>data-fred-dropzone="content"</code> and needs to contain a reference to the <code>[[*content]]</code> tag inside of it.  When Fred loads, it clears out the content rendered in the dropzone, and loads it with element data. However, when Fred is not loaded, it just renders whatever tags you have in that area.</p>
+<p>The default minimum height for a dropzone is only 5 pixels, which may be a bit small to target. If you wish to have a larger “empty” default state, add a <code>data-fred-min-height="250px"</code> setting with your desired minimum height. A larger minimum height on a dropzone can make it easier to target for dropping Elements when empty. The size of your min-height might also need to change if you have competing or overlapping elements, such as a fixed top navigation bar.</p>
+<p>The dropzone’s <code>data-fred-dropzone="content"</code> attribute is required and tells it where to save the rendered Fred content. It also needs to contain a reference to the <code>[[*content]]</code> tag inside of it. When Fred loads, it clears out the content rendered in the dropzone, and loads it with element data. However, when Fred is not loaded, it just renders whatever tags you have in that area.</p>
+<h3 id="multiple-dropzones">Multiple Dropzones</h3>
+<p>Sometimes you may want to have a more complex layout with multiple Dropzones, like for a main content area and a sidebar. Fred installs a new Template Variable type for this purpose: <code>Fred Dropzone</code>. To create another dropzone do the following:</p>
+<ol>
+<li>From the MODX Manager, navigate to the <code>Elements</code> sidebar tree &gt; <code>Template Variables</code> drop-down list &gt; <code>+</code> circle icon to create a new TV</li>
+<li>Give the TV a name, such as “sidebar” and assign it to a Fred category</li>
+<li>From the <code>Input Options</code> tab choose "Fred Dropzone" from the Input Type select list</li>
+<li>If you want to see the rendered content from the Manager, change the value of the last “Hide Field from Manager:” option to “No”.</li>
+</ol>
+<p><img alt="Fred Dropzone TV Screenshot" src="" /></p>
+<h4 id="fred-template-example-with-sidebar-dropzone">Fred Template Example with <code>sidebar</code> Dropzone</h4>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;[[*pagetitle]]&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body &gt;
+    &lt;section id=&quot;wrapper&quot;&gt;
+        &lt;div id=&quot;main&quot; data-fred-dropzone=&quot;content&quot; data-fred-min-height=&quot;500px&quot;&gt;
+            [[*content:default=`&lt;h1&gt;Drop Elements here to start…&lt;/h1&gt;`]]
+        &lt;/div&gt;
+        &lt;aside id=&quot;sidebar&quot; data-fred-dropzone=&quot;sidebar&quot; data-fred-min-height=&quot;250px&quot;&gt;
+            [[*sidebar:default=`&lt;h2&gt;Drop Elements here for the Sidebar…&lt;/h2&gt;`]]
+        &lt;/aside&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
                 
                   
                 

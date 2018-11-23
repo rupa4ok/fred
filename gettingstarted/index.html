@@ -287,22 +287,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-set-up-a-template" title="Step 2: Set up a template" class="md-nav__link">
-    Step 2: Set up a template
+  <a href="#step-2-set-up-a-template" title="Step 2: Set up a Template" class="md-nav__link">
+    Step 2: Set up a Template
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-instruct-fred-to-use-your-template" title="Step 3: Instruct Fred to use your template" class="md-nav__link">
-    Step 3: Instruct Fred to use your template
+  <a href="#step-3-assign-a-template-to-a-fred-theme" title="Step 3: Assign a Template to a Fred Theme" class="md-nav__link">
+    Step 3: Assign a Template to a Fred Theme
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-create-the-category-structure-for-your-elements" title="Step 4: Create the category structure for your elements" class="md-nav__link">
-    Step 4: Create the category structure for your elements
+  <a href="#step-4-create-categories-for-elements" title="Step 4: Create Categories for Elements" class="md-nav__link">
+    Step 4: Create Categories for Elements
   </a>
   
 </li>
@@ -720,22 +720,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-set-up-a-template" title="Step 2: Set up a template" class="md-nav__link">
-    Step 2: Set up a template
+  <a href="#step-2-set-up-a-template" title="Step 2: Set up a Template" class="md-nav__link">
+    Step 2: Set up a Template
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-instruct-fred-to-use-your-template" title="Step 3: Instruct Fred to use your template" class="md-nav__link">
-    Step 3: Instruct Fred to use your template
+  <a href="#step-3-assign-a-template-to-a-fred-theme" title="Step 3: Assign a Template to a Fred Theme" class="md-nav__link">
+    Step 3: Assign a Template to a Fred Theme
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-create-the-category-structure-for-your-elements" title="Step 4: Create the category structure for your elements" class="md-nav__link">
-    Step 4: Create the category structure for your elements
+  <a href="#step-4-create-categories-for-elements" title="Step 4: Create Categories for Elements" class="md-nav__link">
+    Step 4: Create Categories for Elements
   </a>
   
 </li>
@@ -774,60 +774,73 @@
                 
                 
                 <h1 id="getting-started">Getting Started</h1>
-<p>To use Fred, you'll need to set up a few things before you can start creating content.</p>
+<p>Setting up Fred involves a few requirements before you can use it to create content. The easiest way to start is to install a Theme exported from Fred which should include everything you need to succeed.</p>
 <ol>
-<li>Install <a href="https://modx.com/extras/package/fred">Fred from MODX.com</a></li>
-<li>Set up a template with the content dropzone</li>
-<li>Instruct Fred to use your template</li>
-<li>Create the category structure for your elements</li>
-<li>Create your first elements</li>
+<li>Install a <a href="https://modx.com/extras/browse/?search=fred">Fred Theme from the MODX Extras repository</a> into your MODX website</li>
+<li>Add a new page to your site using one of the Templates from the Fred theme and save the Page</li>
+<li>Click the <code>Preview</code> button to visit this page from the front-end and start building with Fred</li>
+</ol>
+<p>If you’re interested in creating Themes, it is also straightforward as outlined and detailed below:</p>
+<ol>
+<li>Install <a href="https://modx.com/extras/package/fred">Fred from MODX.com</a>, and probably the <a href="https://modx.com/extras/package/fredfontawesome5iconeditor">icon picker</a> and <a href="https://modx.com/extras/package/fredtinymcerte">TinyMCE RTE</a>, too</li>
+<li>Set up a MODX Template with a content Dropzone</li>
+<li>Assign this Template to a Fred theme</li>
+<li>Create Categories for your Fred Elements</li>
+<li>Create your first Fred Element</li>
 </ol>
 <h2 id="step-1-install-fred">Step 1: Install Fred</h2>
-<p>Fred is available as a transport package. In your MODX installation, go to Extras &gt; Installer and click on Download Extras. Find Fred through the search. </p>
-<p>You may also see other extras listed that are built to be used with Fred. When you decide to use these, you may need to set those up or integrate them with your elements separately.</p>
-<p>Once downloaded, install Fred from the packages grid. </p>
-<h2 id="step-2-set-up-a-template">Step 2: Set up a template</h2>
-<p>Fred needs to know where your modular content has to go. It needs a container for that, which it calls a dropzone. </p>
-<p>Create a template (or update an existing one), and add the following to it where you would normally have the <code>[[*content]]</code> tag:</p>
-<pre><code>&lt;div data-fred-dropzone="content" style="min-height: 200px;"&gt;
+<p>Fred is available as a transport package. In your MODX installation, go to <code>Extras</code> &gt; <code>Installer</code> and click on the Download Extras button. Search to find bring up Fred. </p>
+<p>You should also see other Extras listed made for Fred, such as a Font Awesome icon picker and a TinyMCE RTE. If you decide to add these also, follow their setup instructions.</p>
+<p>After your Fred Extras finish downloading, install them from the Packages grid. </p>
+<h2 id="step-2-set-up-a-template">Step 2: Set up a Template</h2>
+<p>Fred needs a “dropzone” to know where content can go, indicated by adding a <code>data-fred-dropzone</code> attribute to an HTML entity, often a <code>div</code> tag. For example, where the <code>[[*content]]</code> tag would normally be in a Template, add the following:</p>
+<pre><code>&lt;div data-fred-dropzone="content"  data-fred-name="content" data-fred-target="content"&gt;
     [[*content]]
 &lt;/div&gt;
 </code></pre>
-<p>Note the <code>data-fred-dropzone="content"</code> attribute - that is required and needs to have a value of content. It tells Fred that this is your main content field and needs to be managed as such.</p>
-<p>The <code>min-height</code> style is optional, but helps with making it easier to drop the first element into your content later.</p>
-<h2 id="step-3-instruct-fred-to-use-your-template">Step 3: Instruct Fred to use your template</h2>
-<p>Now that we've created the basic template, let's tell Fred about it!</p>
-<ul>
-<li>Go to Extras &gt; Fred and switch to <code>Themed Templates</code> tab.</li>
+<p>Note the value of the <code>data-fred-dropzone="content"</code> attribute indicates where to render your content once you save a page in Fred, in this case, the <code>[[*content]]</code>. Fred also supports multiple Dropzones; see the <a href="../templates">templates documentation</a> for more information.</p>
+<h2 id="step-3-assign-a-template-to-a-fred-theme">Step 3: Assign a Template to a Fred Theme</h2>
+<ol>
+<li>In the MODX Manager, go to the <code>Extras</code> &gt; <code>Fred</code> menu and switch to <code>Themed Templates</code> tab</li>
 <li>Click the <code>Assign Theme to a Template</code> button</li>
-<li>Select all Templates you'll want to use with fred</li>
-<li>Select <code>Default</code> Theme</li>
-<li>Click <code>Save</code></li>
-</ul>
-<p>Now you should be able of visiting a resource that uses your template from step 2 and see either the "Open in Fred" button (in the manager), or the Fred launcher in the bottom left of the page (in the frontend). That tells us we're on the right path, now we need to create some categories and elements.</p>
-<h2 id="step-4-create-the-category-structure-for-your-elements">Step 4: Create the category structure for your elements</h2>
-<p>Before you can start adding elements, you'll need some categories!</p>
-<p>Fred structures elements into categories. Open Element's CMP (Extras &gt; Fred &gt; Elements), switch to <code>Categories</code> tab and create categories that will later contain your actual elements.</p>
-<p>For example, your categories could look like this:</p>
+<li>Select all Templates you wish to use with this Fred Theme</li>
+<li>Select the <code>Default</code> Theme</li>
+<li>Click the <code>Save</code> button</li>
+</ol>
+<p>In the Manager, Resources that use Templates assigned to a Fred Theme should have an "Open in Fred" button. From the front-end, you should see either three icons which launch Fred at the bottom-left of the page or a Fred sidebar. </p>
+<h2 id="step-4-create-categories-for-elements">Step 4: Create Categories for Elements</h2>
+<p>Fred organizes Elements using categories. Open the Elements Manager Page from the <code>Extras</code> &gt; <code>Fred</code> &gt; <code>Elements</code> menu, and switch to the <code>Categories</code> tab to create Categories. For example, your categories could look like this:</p>
 <ul>
-<li>Text</li>
+<li>Page Content</li>
+<li>Intros</li>
 <li>Images</li>
-<li>Widgets</li>
+<li>Testimonials</li>
+<li>…</li>
 </ul>
-<p>Later you'll create Elements and assign them to the "Text", "Images" or "Widgets" categories. </p>
-<p>For now, create at least one category, for example "Text", and let's move on to create some Elements.</p>
+<p>Fred requires at least one Category before creating actual content Element.</p>
 <h2 id="step-5-create-your-first-elements">Step 5: Create your first elements</h2>
-<p>Let's start by creating a heading element, often the first thing on a page. </p>
-<p>Switch to the <code>Elements</code> tab in Element's CMP (Extras &gt; Fred &gt; Elements) and hit <code>Create Element</code> button. Fill the name (<code>heading</code>), category (<code>Text</code>), image (<code>https://placehold.it/300x150&amp;text=Heading</code>) and use following Element's Markup:</p>
+<p>Fred Elements can be as simple as raw text or more complex like a  responsive product catalog detail page.  Let’s start by creating a simple heading element, often the first thing on a page. </p>
+<p>Switch to the <code>Elements</code> tab in Element's CMP (<code>Extras</code> &gt; <code>Fred</code> &gt; <code>Elements</code>) and click the <code>Create Element</code> button. Fill the name (<code>H1 Heading</code>), category (<code>Text</code>), image (<code>https://placehold.it/300x150&amp;text=Heading</code>).</p>
+<p><img alt="Element Creation 3PC Screenshot" src="" /></p>
+<p>Add the following markup:</p>
 <pre><code>&lt;h1 contenteditable="true" data-fred-name="heading"&gt;Hello, world.&lt;/h1&gt;
 </code></pre>
-<p>Save your Element and go back to the frontend of your resource, refreshing the page.</p>
-<p>Click on the orange elements icon or the MODX icon in the launcher at the bottom left of the page. In the Elements tab of the sidebar, you should see the categories you created earlier in step 4. Hover over the Text category to see your Heading element, and drag it into the empty content. </p>
-<p>Congratulations, you just added your first element to a page!</p>
-<p>Now that it's in place, you can click on it to edit its text. By hovering over an element you'll see an additional toolbar that lets you duplicate, delete, or move the element on your page. </p>
-<p>Let's create another element for simple text. Create an Element under same category with the name <code>paragraph</code>, <code>https://placehold.it/300x150&amp;text=Paragraph</code> as image, and <code>&lt;p contenteditable="true" data-fred-name="paragraph"&gt;Your content goes here.&lt;/p&gt;</code> as markup. Save, and refresh the frontend. Try inserting your element and moving it across the page. </p>
+<p>Save this Element, go back to the front-end of your Resource, and refresh the page.</p>
+<p>Click on the orange Elements stacked boxes icon or the MODX icon in the launcher at the bottom left of the page. In the sidebar Elements tab, you should now see the categories you created earlier in step 4. Hover the <code>Text</code> category to see your freshly created <code>H1 Heading</code> Element and drag it into the empty dropzone.</p>
+<p><img alt="Front-end sidebar Screenshot" src="" /></p>
+<p>Congratulations, you just added your first Element to a page using Fred!</p>
+<p>Select the placeholder “Hello, world.” text and start typing to edit its content. When hovering over an Element, you’ll see an additional toolbar that lets you duplicate, delete, or move the element on your page.  When you’re happy with the new page title, click the green checkbox button to save.</p>
+<p>Let’s create another element for a single paragraph: </p>
+<ol>
+<li>Create an Element under same category with the name <code>Basic Paragraph</code>, <code>https://placehold.it/300x150&amp;text=Paragraph</code> for the image, and <code>&lt;p contenteditable="true" data-fred-name="paragraph"&gt;Your content goes here.&lt;/p&gt;</code> for the markup</li>
+<li>Save this in the Manager</li>
+<li>From the front-end, reload the page</li>
+<li>Drag this new Element beneath the previously created title, and drop it in place </li>
+<li>Change the text and save</li>
+</ol>
+<p><img alt="Front-end editing .gif animation" src="" /></p>
 <h2 id="learn-more">Learn more</h2>
-<p>Now that you have the basics of Fred working, you can learn more about the different types of elements you can create. </p>
+<p>Now that you have the basics of Fred working continue reading the documentation to learn more about how Fred works. </p>
                 
                   
                 
