@@ -989,41 +989,39 @@
 <p>Start by creating a blank MODX instance using the latest version. You’ll also need to <a href="https://support.modx.com/hc/en-us/articles/217294267-Access-Instances-with-SFTP-SSH"><code>ssh</code> into your site</a> to set up <a href="https://github.com/modmore/Gitify">Gitify</a>. </p>
 <p>Gitify brings a two-way sync of data typically stored in the MODX database, making it versionable with Git, and thus much easier to collaborate on with a team.</p>
 <h3 id="step-1-create-a-blank-site-and-install-composer-and-gitify">Step 1: Create a Blank Site and Install Composer and Gitify</h3>
-<p>Once the instance is created, <code>ssh</code> into it and execute the following commands. This will install Composer and get Gitify cloned to your site:</p>
-<pre><code>cd www
-curl http://modx.co/scripts/install.sh | sh
-cd ~ 
-mkdir gitify
-git clone https://github.com/modmore/Gitify.git ./gitify/
+<p>Once the instance is created, <code>ssh</code> into it and execute the following commands. This will install Composer and get Gitify cloned to your site. </p>
+<pre><code>cd www; curl http://modx.co/scripts/install.sh | sh
+mkdir gitify; cd gitify
+git clone https://github.com/modmore/Gitify.git ./
 </code></pre>
 
-<p>Now exit the SSH session, and log back in so you can use Composer.</p>
-<p>TODO: <code>source …</code> command so you don't have to logout/login each time</p>
+<p>Now exit the SSH session, and log back in so you can use Composer. Alternately, you can use a command like <code>source /paas/cXXXX/.profile</code>, replacing the <code>cXXXX</code> with your actual Cloud directory.</p>
 <h3 id="step-2-set-up-gitify">Step 2: Set up Gitify</h3>
 <p>From an SSH connection in the Cloud home directory:</p>
-<pre><code>cd www/gitify
+<pre><code>cd ~/www/gitify
 composer install
-chmod +x Gitify
-cd ~/.bin
-ln -s ../gitify/Gitify gitify
+chmod +x Gitify; cd ~/.bin; ln -s ../gitify/Gitify gitify
 </code></pre>
 
-<p>Again, log out of the SSH session so you use Gitify.</p>
+<p>After the <code>composer install</code> command you can confirm things worked if you see a green line of text that says “Generating autoload files”. Again, log out of the SSH session so you use Gitify, or use the <code>source…</code> command above.</p>
 <h3 id="step-3-clone-the-repo-of-a-shared-theme-to-your-github-account">Step 3: Clone the repo of a shared Theme to your Github account</h3>
 <p>Fork a Theme to your own Github account for sharing. For the purposes of this tutorial, we’ll use the Starter Theme for Fred—a Bootstrap 4 based theme with many common patterns already created as elements. To get the URL to clone, from Github click the down-arrow on the green <code>Clone or download</code> button and choose the SSH URL, like <code>git@github.com:modxcms/fred-theme-starter.git</code></p>
 <h3 id="step-4-clone-the-shared-theme">Step 4: Clone the Shared Theme</h3>
 <p>Because you cannot <code>git clone</code> into a directory with anything in it, we’ll use a temporary location and move the shared theme. To get the URL to clone, from Github click the down-arrow on the green <code>Clone or download</code> button and choose the SSH URL, like <code>git@github.com:modxcms/fred-theme-starter.git</code></p>
-<pre><code>cd www
+<pre><code>cd ~/www/
 git clone git@github.com:modxcms/fred-theme-starter.git tmp
 </code></pre>
 
-<p>This will download the theme repository into a <code>~/tmp/</code> directory in the Cloud. Next, move the cocntents of <code>tmp/</code> to the correct location under <code>www/</code> so it can be loaded into your local MODX installation:</p>
-<pre><code>mv -rf tmp/* www/*
+<p>This will download the theme repository into a <code>~/www/tmp/</code> directory in the Cloud. Next, move the contents of <code>tmp/</code> to the correct location under <code>www/</code> so it can be loaded into your local MODX installation:</p>
+<pre><code>rsync -av ./tmp/ ./
 </code></pre>
 
-<p>Make sure the <code>.git/</code> directory and files are move under <code>www/</code>.</p>
+<p>Make sure the <code>.git/</code> directory and files are move under <code>www/</code>. Once you confirm things are in the right place, go ahead and remove <code>tmp/</code>:</p>
+<pre><code>rm -rf ./tmp/
+</code></pre>
+
 <h3 id="step-5-load-the-theme-using-gitify">Step 5: Load the Theme using Gitify</h3>
-<p>Now it's time to load the theme into the Manager:</p>
+<p>Now it’s time to load the theme into the Manager:</p>
 <pre><code>cd ~/www/
 gitify package:install --all
 gitify build
