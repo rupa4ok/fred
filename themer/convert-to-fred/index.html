@@ -345,6 +345,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../gitify/" title="Using Gitify to Collaborate" class="md-nav__link">
+      Using Gitify to Collaborate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -355,9 +367,65 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Convert Exisitng Sites to Fred
+      </label>
+    
     <a href="./" title="Convert Exisitng Sites to Fred" class="md-nav__link md-nav__link--active">
       Convert Exisitng Sites to Fred
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tips" title="Tips" class="md-nav__link">
+    Tips
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-element" title="Default Element" class="md-nav__link">
+    Default Element
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates" title="Templates" class="md-nav__link">
+    Templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themes" title="Themes" class="md-nav__link">
+    Themes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -381,13 +449,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
     
-    <label class="md-nav__link" for="nav-6-5">
+    <label class="md-nav__link" for="nav-6-6">
       Elements
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="6">
-      <label class="md-nav__title" for="nav-6-5">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
         Elements
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -513,13 +581,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-10" type="checkbox" id="nav-6-10">
     
-    <label class="md-nav__link" for="nav-6-9">
+    <label class="md-nav__link" for="nav-6-10">
       Manager 3PC
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="10">
-      <label class="md-nav__title" for="nav-6-9">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-10">
         Manager 3PC
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -756,6 +824,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tips" title="Tips" class="md-nav__link">
+    Tips
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-element" title="Default Element" class="md-nav__link">
+    Default Element
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates" title="Templates" class="md-nav__link">
+    Templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themes" title="Themes" class="md-nav__link">
+    Themes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -770,7 +881,16 @@
                 
                 
                 <h1 id="convert-an-existing-modx-site-to-fred">Convert an Existing MODX Site to Fred</h1>
-<p><em>todo</em> @matdave</p>
+<p>Fred allows you to convert existing standard resources into Fred resources. You can make Fred as open or restricted as you want when it comes to controlling the layout of a page. It is possible to just limit Fred to a set content area, similiar to how you would use an RTE currently.</p>
+<h2 id="tips">Tips</h2>
+<p>Here are some tips for converting your site to Fred.</p>
+<h3 id="default-element">Default Element</h3>
+<p>When converting existing pages to Fred, you will want to specify a <em>Default Element</em> in the Themes grid, <a href="/themer/cmp/themes.md">see documentation</a>. Without a default element set, your content will disappear when switching a resource to Fred. </p>
+<p>The Default Element works by detecting there are no Fred elements currently in place, then selecting the default element and putting any content from the resource into the object specified by the <code>data-fred-name</code> option.  </p>
+<h3 id="templates">Templates</h3>
+<p>Generally, you will want to create a new template or duplicate an existing template when converting content to Fred. This way you can maintain a hybrid and not potentially break content during the transition.</p>
+<h3 id="themes">Themes</h3>
+<p>One important note about themes is that multiple Templates can be specified per theme, but if a Fred resource is changed to a Template with a different theme, it has the potential to lose its elements. This is because Elements are assigned to a specific theme, so the new theme wouldn't have access to the old elements.</p>
                 
                   
                 
@@ -791,7 +911,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../themes/" title="Theme Creation Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../gitify/" title="Using Gitify to Collaborate" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -800,7 +920,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Theme Creation Tutorial
+                Using Gitify to Collaborate
               </span>
             </div>
           </a>
