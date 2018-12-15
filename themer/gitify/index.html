@@ -444,8 +444,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#push-your-changes-back-to-your-collaborators" title="PUsh your changes back to your collaborators" class="md-nav__link">
-    PUsh your changes back to your collaborators
+  <a href="#push-your-changes-back-to-your-collaborators" title="Push your changes back to your collaborators" class="md-nav__link">
+    Push your changes back to your collaborators
   </a>
   
 </li>
@@ -502,7 +502,7 @@
     <label class="md-nav__link" for="nav-6-6">
       Elements
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="7">
       <label class="md-nav__title" for="nav-6-6">
         Elements
       </label>
@@ -634,7 +634,7 @@
     <label class="md-nav__link" for="nav-6-10">
       Manager 3PC
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="11">
       <label class="md-nav__title" for="nav-6-10">
         Manager 3PC
       </label>
@@ -946,8 +946,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#push-your-changes-back-to-your-collaborators" title="PUsh your changes back to your collaborators" class="md-nav__link">
-    PUsh your changes back to your collaborators
+  <a href="#push-your-changes-back-to-your-collaborators" title="Push your changes back to your collaborators" class="md-nav__link">
+    Push your changes back to your collaborators
   </a>
   
 </li>
@@ -1034,9 +1034,31 @@ gitify build
 <p>A common purpose of collaborating on a Theme will be to build a series of Elements, Option Sets, and RTE Configs.</p>
 <p>Once you’ve installed and worked on a Theme with a team, you’ll find yourself needing to do some common things:</p>
 <h3 id="get-the-latest-contributions-from-your-collaborators">Get the latest contributions from your collaborators</h3>
-<p>TODO: @theboxer</p>
-<h3 id="push-your-changes-back-to-your-collaborators">PUsh your changes back to your collaborators</h3>
-<p>TODO: @theboxer</p>
+<p>When all your changes are pushed to the repository:</p>
+<pre><code>cd ~/www/
+git pull
+gitify package:install --all
+gitify build
+</code></pre>
+
+<p>If you have changes in your instance:</p>
+<pre><code>cd ~/www/
+gitify extract
+git add --all # or git add on files you want to commit
+git commit
+git pull
+# resolve conflicts if any
+gitify package:install --all
+gitify build
+</code></pre>
+
+<h3 id="push-your-changes-back-to-your-collaborators">Push your changes back to your collaborators</h3>
+<pre><code>cd ~/www/
+gitify extract
+git add --all # or git add on files you want to commit
+git commit
+git push origin master # replace master with branch name you want to push into
+</code></pre>
                 
                   
                 
