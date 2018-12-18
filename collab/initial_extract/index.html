@@ -777,18 +777,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../gitify_in_action/" title="Using Gitify" class="md-nav__link">
-      Using Gitify
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -799,10 +787,84 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting your Theme in Git
+      </label>
+    
     <a href="./" title="Getting your Theme in Git" class="md-nav__link md-nav__link--active">
       Getting your Theme in Git
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connect-to-your-theme-modx-project" title="Connect to your Theme MODX project" class="md-nav__link">
+    Connect to your Theme MODX project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-ignore" title="Git Ignore" class="md-nav__link">
+    Git Ignore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gitify-yaml-configruation" title="The Gitify YAML configruation" class="md-nav__link">
+    The Gitify YAML configruation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intial-commit" title="Intial Commit" class="md-nav__link">
+    Intial Commit
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitify_in_action/" title="Basic Gitify Usage" class="md-nav__link">
+      Basic Gitify Usage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pr_workflow/" title="Advaced Gitify with PRs" class="md-nav__link">
+      Advaced Gitify with PRs
+    </a>
   </li>
 
         
@@ -828,6 +890,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connect-to-your-theme-modx-project" title="Connect to your Theme MODX project" class="md-nav__link">
+    Connect to your Theme MODX project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-ignore" title="Git Ignore" class="md-nav__link">
+    Git Ignore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gitify-yaml-configruation" title="The Gitify YAML configruation" class="md-nav__link">
+    The Gitify YAML configruation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intial-commit" title="Intial Commit" class="md-nav__link">
+    Intial Commit
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -842,8 +941,95 @@
                 
                 
                 <h1 id="setting-up-a-theme-to-work-with-gitify">Setting up a Theme to work with Gitify</h1>
-<p>Describe how to set up the initial gitify extract profile or …</p>
-<p>TODO: @theboxer</p>
+<p>Start by clicking the green <code>New</code> button when signed into Github. Give your new repository a name and description. This will be the source “origin” for collaborators. You should not initialize the repository with a README file because one will be added by the Theme later.</p>
+<p>Note the URL for this project, by clicking the down-arrow on the green <code>Clone or download</code> button and choose the SSH URL, like <code>git@github.com:your_name/example_theme.git</code>.</p>
+<h2 id="connect-to-your-theme-modx-project">Connect to your Theme MODX project</h2>
+<p>SSH into your Cloud, and switch to the <code>www/</code> webroot directory. Then initialize git with the following command, using the SSH URL from above:</p>
+<pre><code>git init
+git remote add origin git@github.com:your_name/example_theme.git
+</code></pre>
+
+<h2 id="git-ignore">Git Ignore</h2>
+<p>Create a <code>.gitingnore</code> file to exclude MODX and other files that are not needed with the following content. Make sure to change <code>!/assets/themes/{{your-theme-name}}</code> to its actual name like <code>!/assets/themes/lightcoral</code>:</p>
+<pre><code># MODX &amp; Gitify #
+#################
+/_backup
+/config.core.php
+/connectors
+/core
+/ht.access
+/index.php
+/manager
+/assets/*
+!/assets/themes/{{your-theme-name}}
+
+# IDE files (optional or add more #
+###################################
+.idea
+.vscode
+.settings
+nbproject
+.project
+
+# OS generated files (optional) #
+#################################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+node_modules
+npm-debug.log
+.sass-cache
+</code></pre>
+
+<h2 id="the-gitify-yaml-configruation">The Gitify YAML configruation</h2>
+<p>Create a yaml file named <code>.gitify</code> file in the webroot directory with following content:</p>
+<pre><code class="yaml">data_directory: _data/
+backup_directory: _backup/
+data:
+    fred_themes:
+        class: FredTheme
+        primary: id
+        exclude_keys: ['config']
+        package: fred
+    fred_element_categories:
+        class: FredElementCategory
+        primary: id
+    fred_element_option_sets:
+        class: FredElementOptionSet
+        primary: id
+        extension: .json
+    fred_element_rte_configs:
+        class: FredElementRTEConfig
+        primary: id
+        extension: .json
+    fred_elements:
+        class: FredElement
+        primary: id
+        extension: .html
+    fred_blueprint_categories:
+        class: FredBlueprintCategory
+        primary: id
+    fred_blueprints:
+        class: FredBlueprint
+        primary: id
+        extension: .json
+</code></pre>
+
+<p>This will instruct Gitify to include all Elements and categories, their Option Sets, public Blueprints and categories, RTE configs, and the Themes. Media sources are not currently supported for Theme exports and are therefore omitted.</p>
+<h2 id="intial-commit">Intial Commit</h2>
+<p>Now it’s time to push the code to the source repo. Once you’ve reached a point where you are ready to share and collaborate on a theme, execute the following:</p>
+<pre><code>cd ~/www
+gitify extract
+git add --all  # or git add on files you want to commit
+git commit -m &quot;Initalize My Awesome Theme&quot;  # please write your own message
+git push origin master
+</code></pre>
+
+<p>Now you are ready to start <a href="collab/gitify_in_action">working with others</a>.</p>
                 
                   
                 
@@ -864,7 +1050,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../gitify_in_action/" title="Using Gitify" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../gitify/" title="Setting up Gitify" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -873,11 +1059,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Using Gitify
+                Setting up Gitify
               </span>
             </div>
           </a>
         
+        
+          <a href="../gitify_in_action/" title="Basic Gitify Usage" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Basic Gitify Usage
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
@@ -887,7 +1087,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 <a href="https://modx.com" title="MODX">MODX</a>, LLC
+            Copyright &copy; 2018 <a href="https://modx.com" title="MODX">MODX</a>
           </div>
         
         powered by
