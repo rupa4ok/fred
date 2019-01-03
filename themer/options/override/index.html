@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#overriding-option-settings" tabindex="1" class="md-skip">
+      <a href="#overriding-option-sets" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -988,10 +988,10 @@
                   <a href="https://github.com/modxcms/fred/edit/master/docs/themer/options/override.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="overriding-option-settings">Overriding Option Settings</h1>
-<p>Use cases for overriding an option set are when you need to change just a few things about an Option Set for a single Element without maintaining an entierly separate Option Set.</p>
+                <h1 id="overriding-option-sets">Overriding Option Sets</h1>
+<p>Use cases for overriding an option set are when you need to change things like switching <code>remote</code> from <code>true</code> to <code>false</code>. You can also use them more extensively like overriding all the Settings for a single Element without maintaining an entierly separate Option Set.</p>
 <p>Overrides are located on the <code>Overrides</code> tab when editing a specific Element in the Fred Manager page.</p>
-<p><strong>Note:</strong> You must include <em>all</em> settings you want to show as controls in the Override panel. The best way to start your override is by copying the entire settings JSON node by clicking the <code>Preview Option Set</code> button and selecting the node, and pasting it into the overrides text area.   </p>
+<p><strong>Note:</strong> You must include <em>all</em> settings you want to show as controls in the Override panel. The best way to start your override is by copying the entire settings JSON node by clicking the <code>Preview Option Set</code> button and selecting the JSON object(s) and pasting into the overrides text area.   </p>
 <h2 id="example">Example</h2>
 <p>Assume you have an Intro plan with a background image and a call to action link. You want a version for both single-page sites with anchor link external URLs on the page, but also one which allows links to other Fred pages on your site. You don't need the scroll-to-link (see below) and you want to change the link object to be a MODX page select list.</p>
 <h3 id="original-setting">Original Setting</h3>
