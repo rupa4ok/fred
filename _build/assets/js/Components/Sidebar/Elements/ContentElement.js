@@ -682,7 +682,7 @@ export class ContentElement {
         }
     }
     
-    setValue(el, value, name = '_value', namespace = '_raw', contentEl = null, isPreview = false) {
+    setValue(el, value, name = '_value', namespace = '_raw', contentEl = null, isPreview = false, silent = false) {
         if (!this.content[el.dataset.fredName] || Array.isArray(this.content[el.dataset.fredName])) this.content[el.dataset.fredName] = {};
         if (!this.content[el.dataset.fredName][namespace] || Array.isArray(this.content[el.dataset.fredName][namespace])) this.content[el.dataset.fredName][namespace] = {};
         
@@ -693,15 +693,15 @@ export class ContentElement {
             this.setValueForBindElements(el.dataset.fredName, value, contentEl);
         }
         
-        if (el.dataset.fredTarget) {
+        if (!silent && el.dataset.fredTarget) {
             emitter.emit('fred-page-setting-change', el.dataset.fredTarget, this.content[el.dataset.fredName][namespace][name], value, el);
         }
         
         return value;
     }
     
-    setElValue(el, value, name = '_value', namespace = '_raw', contentEl = null, isPreview = false) {
-        value = this.setValue(el, value, name, namespace, contentEl, isPreview);
+    setElValue(el, value, name = '_value', namespace = '_raw', contentEl = null, isPreview = false, silent = false) {
+        value = this.setValue(el, value, name, namespace, contentEl, isPreview, silent);
      
         if (name === '_value') {
             switch (el.nodeName) {

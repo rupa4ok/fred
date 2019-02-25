@@ -332,7 +332,7 @@ export default class Fred {
                 const targets = dz.querySelectorAll(`[data-fred-target="${settingName}"`);
                 for (let target of targets) {
                     if (target !== sourceEl) {
-                        target.fredEl.setElValue(target, settingValue);
+                        target.fredEl.setElValue(target, settingValue, '_value', '_raw', null, false, true);
                     }
                 }
             });
